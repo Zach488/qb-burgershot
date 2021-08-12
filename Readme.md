@@ -1,5 +1,6 @@
 A Burgershot for QBCore Framework
 
+Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 Please Note this is a Work in Progress , Code won't be 100% optimized. 
 Only items not added to crafting is all the food except fries and torpedo.
