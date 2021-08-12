@@ -613,7 +613,7 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
     TriggerEvent('nh-context:sendMenu', {
 
         {
-            id = 2,
+            id = 1,
             header = "Order Items",
             txt = "Order New Ingredients!",
             params = {
@@ -621,7 +621,7 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
             }
         },
         {
-            id = 3,
+            id = 2,
             header = "Open Fridge",
             txt = "See what you have in storage",
             params = {
