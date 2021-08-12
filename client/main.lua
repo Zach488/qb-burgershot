@@ -79,8 +79,6 @@ AddEventHandler("qb-burgershot:Torpedo", function()
 
       if (item1 and item2) == true then
         MakeTorpedo()
-      else
-        print("erroorr")
       end    
 end)
 
