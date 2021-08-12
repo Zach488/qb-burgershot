@@ -1,5 +1,18 @@
 A Burgershot for QBCore Framework
 
+
+Please Note this is a Work in Progress , Code won't be 100% optimized. 
+Only items not added to crafting is all the food except fries and torpedo.
+I used qTarget as Bt-target didn't work, might work now havn't tested.
+Only Problem with qTarget is, it doesn't have any QBCore job functionality so the job = "burgershot" 
+doesn't work, use Bt-target to resolve and change qtarget to bt-target in all the exports.
+
+
+
+Please feel free to contribute or improve code will be much appreicated.
+
+
+
 Requirements :
 
 QB Framework - https://github.com/qbcore-framework/qb-core
@@ -8,35 +21,12 @@ PolyZone - https://github.com/mkafrin/PolyZone
 
 bt-target - https://github.com/BerkieBb/bt-target
 
-qTarget - 
+qTarget - https://github.com/QuantusRP/qtarget
 
 
 Credits : 
 
-Decisive Burgershot Job  - 
-
-
-
-#shop
-bun
-raw patty
-tomato
-lettuce
-sack of potatoes
-milkshake formula
-syrup for drinks
-
-#fries station
-Need SackofPotatoes
-Makes fries
-
-#Burger Work Station 1 + 2 
-Cook raw patty
-Get Cooked patty
-
-#make some drinks
-need milkshake formula for milkshake
-need syrup for soft drinks
+Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
 
 
 To Do 
@@ -46,8 +36,7 @@ To Do
 - Add New Icons and Descriptions for items
 
 
-
-#qb-smallresources - config.lua
+Insert into #qb-smallresources --> config.lua
 
 Consumeables = {
 
@@ -68,8 +57,9 @@ Consumeables = {
 } 
 
 
-#QBCore - Shared.lua
-Do icons for items/description and so on
+Insert into #QBCore - Shared.lua
+
+Change icons for items and change description
 
 QBShared.Items = {
 	-- Burger Shot
