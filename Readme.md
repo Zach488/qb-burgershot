@@ -37,7 +37,7 @@ To Do
 
 
 Insert into #qb-smallresources --> config.lua
-
+```
 Consumeables = {
 
 --Food 
@@ -55,12 +55,12 @@ Consumeables = {
 ["burger-mshake"] = math.random(40, 50),
 
 } 
-
+```
 
 Insert into #QBCore - Shared.lua
 
 Change icons for items and change description
-
+```
 QBShared.Items = {
 	-- Burger Shot
 		-- Food
@@ -86,7 +86,9 @@ QBShared.Items = {
 	["burger-sodasyrup"] 		 	 = {["name"] = "burger-sodasyrup", 				["label"] = "Soda Syrup", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "ingredients_hfcs.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
 }
 
+```
 
+```
 QBShared.Jobs = {
     ["burgershot"] = {
 		label = "Burgershot Employee",
@@ -117,7 +119,7 @@ QBShared.Jobs = {
         },
 	},
 }		
-
+```
 
 
 
