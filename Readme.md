@@ -34,6 +34,7 @@ To Do
 - Make Script more optimized
 - Change qTarget to bt-Target
 - Add New Icons and Descriptions for items
+-Create Animations for Movements
 
 
 Insert into #qb-smallresources --> config.lua
