@@ -10,7 +10,7 @@ doesn't work, use Bt-target to resolve and change qtarget to bt-target in all th
 
 
 
-Please feel free to contribute or improve code will be much appreicated.
+Please feel free to contribute or improve code will be much appreciated.
 
 
 
