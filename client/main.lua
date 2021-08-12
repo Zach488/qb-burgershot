@@ -598,7 +598,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         {
             id = 5,
             header = "Torpedo Roll",
-            txt = "",
+            txt = "Bun , Cooked Meat",
             params = {
                 event = "qb-burgershot:Torpedo"
             }
