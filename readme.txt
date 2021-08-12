@@ -1,0 +1,133 @@
+A Burgershot for QBCore Framework
+
+Requirements :
+
+QB Framework - https://github.com/qbcore-framework/qb-core
+
+PolyZone - https://github.com/mkafrin/PolyZone
+
+bt-target - https://github.com/BerkieBb/bt-target
+
+qTarget - 
+
+
+Credits : 
+
+Decisive Burgershot Job  - 
+
+
+
+#shop
+bun
+raw patty
+tomato
+lettuce
+sack of potatoes
+milkshake formula
+syrup for drinks
+
+#fries station
+Need SackofPotatoes
+Makes fries
+
+#Burger Work Station 1 + 2 
+Cook raw patty
+Get Cooked patty
+
+#make some drinks
+need milkshake formula for milkshake
+need syrup for soft drinks
+
+
+To Do 
+- Make all food except torpedo craftable
+- Make Script more optimized
+- Change qTarget to bt-Target
+- Add New Icons and Descriptions for items
+
+
+
+#qb-smallresources - config.lua
+
+Consumeables = {
+
+--Food 
+
+["burger-bleeder"] = math.random(35, 54),
+["burger-moneyshot"] = math.random(35, 54),
+["burger-torpedo"] = math.random(35, 54),
+["burger-heartstopper"] = math.random(35, 54),
+["burger-meatfree"] = math.random(35, 54),
+["burger-fries"] = math.random(35, 54),
+
+
+--Drinks
+["burger-softdrink"] = math.random(40, 50),
+["burger-mshake"] = math.random(40, 50),
+
+} 
+
+
+#QBCore - Shared.lua
+Do icons for items/description and so on
+
+QBShared.Items = {
+	-- Burger Shot
+		-- Food
+	["burger-bleeder"] 				 = {["name"] = "burger-bleeder", 			 	["label"] = "Bleeder", 					["weight"] = 250, 		["type"] = "item", 		["image"] = "the-bleeder.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+	["burger-moneyshot"] 			 = {["name"] = "burger-moneyshot", 			 	["label"] = "Moneyshot", 				["weight"] = 300, 		["type"] = "item", 		["image"] = "money-shot.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+	["burger-torpedo"] 				 = {["name"] = "burger-torpedo", 			 	["label"] = "Torpedo", 					["weight"] = 310, 		["type"] = "item", 		["image"] = "torpedo.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+	["burger-heartstopper"] 		 = {["name"] = "burger-heartstopper", 			["label"] = "Heartstopper", 			["weight"] = 2500, 		["type"] = "item", 		["image"] = "the-heart-stopper.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+	["burger-meatfree"] 		 	 = {["name"] = "burger-meatfree", 				["label"] = "MeatFree", 			["weight"] = 125, 		["type"] = "item", 			["image"] = "meat-free.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+	["burger-fries"] 				 = {["name"] = "burger-fries", 			 	  	["label"] = "Fries", 				["weight"] = 125, 		["type"] = "item", 			["image"] = "fries.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
+		-- Drinks
+	
+	["burger-softdrink"] 			 = {["name"] = "burger-softdrink", 				["label"] = "Soft Drink", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "softdrink.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ice Cold Drink."},
+	["burger-mshake"] 			     = {["name"] = "burger-mshake", 				["label"] = "Milkshake", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "milkshake.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Hand-scooped for you!"},
+	
+			--Ingredients
+	["burger-bun"] 				 	 = {["name"] = "burger-bun", 			 	  	["label"] = "Bun", 			["weight"] = 125, 		["type"] = "item", 					["image"] = "bun.png", 		    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-meat"] 				 = {["name"] = "burger-meat", 			 	  	["label"] = "Cooked Patty", 			["weight"] = 125, 		["type"] = "item", 		["image"] = "patty.png", 		    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-lettuce"] 				 = {["name"] = "burger-lettuce", 			 	["label"] = "Lettuce", 				["weight"] = 125, 		["type"] = "item", 			["image"] = "lettuce.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-tomato"] 				 = {["name"] = "burger-tomato", 			 	["label"] = "Tomato", 				["weight"] = 125, 		["type"] = "item", 			["image"] = "tomato.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-raw"] 				 	 = {["name"] = "burger-raw", 			 		["label"] = "Raw Patty", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "patty_raw.png", 	        ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-potato"] 				 = {["name"] = "burger-potato", 			 	["label"] = "Bag of Potatoes", 		["weight"] = 1500, 		["type"] = "item", 			["image"] = "potato.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-mshakeformula"] 		 = {["name"] = "burger-mshakeformula", 			["label"] = "Milkshake Formula", 		["weight"] = 125, 		["type"] = "item", 		["image"] = "ingredients_icecream.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+	["burger-sodasyrup"] 		 	 = {["name"] = "burger-sodasyrup", 				["label"] = "Soda Syrup", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "ingredients_hfcs.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+}
+
+
+QBShared.Jobs = {
+    ["burgershot"] = {
+		label = "Burgershot Employee",
+		defaultDuty = true,
+		bossmenu = vector3(0, 0, 0),
+		grades = {
+            ['0'] = {
+                name = "Trainee",
+                payment = 50
+            },
+			['1'] = {
+                name = "Employee",
+                payment = 75
+            },
+			['2'] = {
+                name = "Burger Flipper",
+                payment = 100
+            },
+			['3'] = {
+                name = "Manager",
+                payment = 125
+            },
+			['4'] = {
+                name = "CEO",
+				isboss = true,
+                payment = 150
+            },
+        },
+	},
+}		
+
+
+
+
