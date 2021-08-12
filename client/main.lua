@@ -407,7 +407,7 @@ Citizen.CreateThread(function()
         exports['qtarget']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
             name="burgershotdrinks2",
             heading=33,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.8,
             maxZ=14.8,
             }, {
@@ -426,7 +426,7 @@ Citizen.CreateThread(function()
          exports['qtarget']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
             name="burgerfridge",
             heading=35,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.0,
             maxZ=15.6,
         }, {
@@ -444,7 +444,7 @@ Citizen.CreateThread(function()
         exports['qtarget']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
             name="burgershotdisplay",
             heading=34,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.0,
             maxZ=14.8,
         }, {
@@ -463,7 +463,7 @@ Citizen.CreateThread(function()
         exports['qtarget']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
             name="craftburger",
             heading=304,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.0,
             maxZ=14.4,
         }, {
@@ -481,7 +481,7 @@ Citizen.CreateThread(function()
 
         exports['qtarget']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
             name="BurgerShot_register_1",
-            debugPoly=true,
+            debugPoly=false,
             heading=125,
             minZ=14.0,
             maxZ=14.5,
@@ -500,7 +500,7 @@ Citizen.CreateThread(function()
 
         exports['qtarget']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
             name="BurgerShot_register_2",
-            debugPoly=true,
+            debugPoly=false,
             heading=302,
             minZ=14.1,
             maxZ=14.5,
@@ -520,7 +520,7 @@ Citizen.CreateThread(function()
 
         exports['qtarget']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
             name="BurgerShot_register_3",
-            debugPoly=true,
+            debugPoly=false,
             heading=125,
             minZ=14.0,
             maxZ=14.4,
@@ -543,7 +543,7 @@ Citizen.CreateThread(function()
         exports['qtarget']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
             name="BurgerShot_register_4",
             heading=0,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.8,
             maxZ=14.2,
                 }, {
@@ -670,7 +670,10 @@ AddEventHandler("qb-burgershot:bill", function()
             }
         }
     })
-    if bill then
+    if bill ~= nil then
+        if bill[1].input == nil or bill[2].input == nil then 
+            return 
+        end
         TriggerServerEvent("qb-burgershot:bill:player", bill[1].input, bill[2].input)
     end
 end)

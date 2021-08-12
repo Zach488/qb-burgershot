@@ -30,7 +30,7 @@ Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tre
 
 
 To Do 
-- Make all food except torpedo craftable
+- Make all food craftable
 - Make Script more optimized
 - Change qTarget to bt-Target
 - Add New Icons and Descriptions for items
