@@ -3,10 +3,10 @@ A Burgershot for QBCore Framework
 Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 Please Note this is a Work in Progress , Code won't be 100% optimized. 
-Only items not added to crafting is all the food except fries and torpedo.
 I used qTarget as Bt-target didn't work, might work now havn't tested.
 Only Problem with qTarget is, it doesn't have any QBCore job functionality so the job = "burgershot" 
 doesn't work, use Bt-target to resolve and change qtarget to bt-target in all the exports.
+
 
 
 
@@ -32,9 +32,7 @@ Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tre
 
 
 To Do 
-- Make all food craftable
-- Make Script more optimized
-- Create Animations for Movements
+- Change Back to Bt-target
 
 
 Insert into #qb-smallresources --> config.lua
