@@ -51,41 +51,216 @@ AddEventHandler('QBCore:Client:SetDuty', function(duty)
     onDuty = duty
 end)
 
+Citizen.CreateThread(function()
+    BurgerShot = AddBlipForCoord(-1197.32, -897.655, 13.995)
+    SetBlipSprite (BurgerShot, 106)
+    SetBlipDisplay(BurgerShot, 4)
+    SetBlipScale  (BurgerShot, 0.5)
+    SetBlipAsShortRange(BurgerShot, true)
+    SetBlipColour(BurgerShot, 75)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentSubstringPlayerName("BurgerShot")
+    EndTextCommandSetBlipName(BurgerShot)
+end) 
+
+RegisterNetEvent("qb-burgershot:BleederBurger")
+AddEventHandler("qb-burgershot:BleederBurger", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
+    		if HasItems then
+				Working = true
+				TriggerEvent('inventory:client:busy:status', true)
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = false,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+					Working = false
+					TriggerEvent('inventory:client:busy:status', false)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-bleeder", 1)
+                    QBCore.Functions.Notify("You made a Bleeder Burger", "success")
+				end, function()
+					TriggerEvent('inventory:client:busy:status', false)
+					QBCore.Functions.Notify("Cancelled..", "error")
+					Working = false
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end
+end)
+
+RegisterNetEvent("qb-burgershot:MoneyShot")
+AddEventHandler("qb-burgershot:MoneyShot", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
+    		if HasItems then
+				Working = true
+				TriggerEvent('inventory:client:busy:status', true)
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = false,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+					Working = false
+					TriggerEvent('inventory:client:busy:status', false)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-moneyshot", 1)
+                    QBCore.Functions.Notify("You made a MoneyShot Burger", "success")
+				end, function()
+					TriggerEvent('inventory:client:busy:status', false)
+					QBCore.Functions.Notify("Cancelled..", "error")
+					Working = false
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end
+end)
+
+RegisterNetEvent("qb-burgershot:HeartStopper")
+AddEventHandler("qb-burgershot:HeartStopper", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
+    		if HasItems then
+				Working = true
+				TriggerEvent('inventory:client:busy:status', true)
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = false,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+					Working = false
+					TriggerEvent('inventory:client:busy:status', false)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-heartstopper", 1)
+                    QBCore.Functions.Notify("You made a Heart Stopper", "success")
+				end, function()
+					TriggerEvent('inventory:client:busy:status', false)
+					QBCore.Functions.Notify("Cancelled..", "error")
+					Working = false
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end
+end)
+
+
 RegisterNetEvent("qb-burgershot:Torpedo")
 AddEventHandler("qb-burgershot:Torpedo", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientTorpedo', function(HasItems)  
+    		if HasItems then
+				Working = true
+				TriggerEvent('inventory:client:busy:status', true)
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Torpedo..", 4000, false, true, {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = false,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+					Working = false
+					TriggerEvent('inventory:client:busy:status', false)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-torpedo", 1)
+                    QBCore.Functions.Notify("You made a Torpedo Roll", "success")
+				end, function()
+					TriggerEvent('inventory:client:busy:status', false)
+					QBCore.Functions.Notify("Cancelled..", "error")
+					Working = false
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
 
-    item1 = false 
-    item2 = false 
-
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem1)
-        if not HasItem1 then
-            QBCore.Functions.Notify("You don't have any buns..", "error")
-        else
-            item1 = true
-        end
-      end, 'burger-bun')
-
-      Citizen.Wait(100)
-
-      QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem2)
-        if not HasItem2 then
-            QBCore.Functions.Notify("You don't have any cooked meat..", "error")
-        else
-            item2 = true          
-        end
-      end, 'burger-meat')
-
-      Citizen.Wait(100)
-
-      if (item1 and item2) == true then
-        MakeTorpedo()
-      end    
+RegisterNetEvent("qb-burgershot:MeatFree")
+AddEventHandler("qb-burgershot:MeatFree", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientMeatfree', function(HasItems)  
+    		if HasItems then
+				Working = true
+				TriggerEvent('inventory:client:busy:status', true)
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Meat Free Burger..", 4000, false, true, {
+					disableMovement = true,
+					disableCarMovement = false,
+					disableMouse = false,
+					disableCombat = false,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+					Working = false
+					TriggerEvent('inventory:client:busy:status', false)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
+                    TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
+					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-meatfree", 1)
+                    QBCore.Functions.Notify("You made a Meat Free Burger", "success")
+				end, function()
+					TriggerEvent('inventory:client:busy:status', false)
+					QBCore.Functions.Notify("Cancelled..", "error")
+					Working = false
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
 end)
 
 
 
 RegisterNetEvent("qb-burgershot:SoftDrink")
 AddEventHandler("qb-burgershot:SoftDrink", function()
+    if onDuty then
     QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakeSoftDrink()
@@ -93,10 +268,14 @@ AddEventHandler("qb-burgershot:SoftDrink", function()
             QBCore.Functions.Notify("You don't have any soda syrup..", "error")
         end
       end, 'burger-sodasyrup')
+    else
+        QBCore.Functions.Notify("You must be Clocked into work", "error")
+    end
 end)
 
 RegisterNetEvent("qb-burgershot:mShake")
 AddEventHandler("qb-burgershot:mShake", function()
+    if onDuty then
     QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakeMShake()
@@ -104,10 +283,14 @@ AddEventHandler("qb-burgershot:mShake", function()
             QBCore.Functions.Notify("You don't have any Milkshake Formula..", "error")
         end
       end, 'burger-mshakeformula')
+    else
+        QBCore.Functions.Notify("You must be Clocked into work", "error")
+    end
 end)
 
 RegisterNetEvent("qb-burgershot:Fries")
 AddEventHandler("qb-burgershot:Fries", function()
+    if onDuty then
     QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakeFries()
@@ -115,11 +298,15 @@ AddEventHandler("qb-burgershot:Fries", function()
             QBCore.Functions.Notify("You don't have any potatoes..", "error")
         end
       end, 'burger-potato' )
+    else
+        QBCore.Functions.Notify("You must be Clocked into work", "error")
+    end
 end)
 
 
 RegisterNetEvent("qb-burgershot:PattyFry")
 AddEventHandler("qb-burgershot:PattyFry", function()
+    if onDuty then
     QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakePatty()
@@ -127,6 +314,9 @@ AddEventHandler("qb-burgershot:PattyFry", function()
             QBCore.Functions.Notify("You don't have any raw patties..", "error")
         end
       end, 'burger-raw')
+    else
+        QBCore.Functions.Notify("You must be Clocked into work", "error")
+    end
 end)
 
 
@@ -184,77 +374,89 @@ end)
 -- Functions --
 function MakeFries()
 TriggerServerEvent('QBCore:Server:RemoveItem', "burger-potato", 1)
-QBCore.Functions.Progressbar("pickup", "Frying the fries..", 20000, false, true, {
+QBCore.Functions.Progressbar("pickup", "Frying the fries..", 4000, false, true, {
     disableMovement = true,
     disableCarMovement = false,
     disableMouse = false,
     disableCombat = false,
-})
-Citizen.Wait(20000)
+},{
+    animDict = "amb@prop_human_bbq@male@base",
+    anim = "base",
+    flags = 8,
+    }, {
+        model = "prop_cs_fork",
+        bone = 28422,
+        coords = { x = -0.005, y = 0.00, z = 0.00 },
+        rotation = { x = 175.0, y = 160.0, z = 0.0 },
+    }
+)
+Citizen.Wait(4000)
 TriggerServerEvent('QBCore:Server:AddItem', "burger-fries", 4)
+QBCore.Functions.Notify("You made 4 fries", "success")
+StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 
 function MakePatty()
     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-raw", 1)
-    QBCore.Functions.Progressbar("pickup", "Cooking the Patty..", 20000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Cooking the Patty..", 4000, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = false,
-    })
-    Citizen.Wait(20000)
+    },{
+        animDict = "amb@prop_human_bbq@male@base",
+        anim = "base",
+        flags = 8,
+    }, {
+        model = "prop_cs_fork",
+        bone = 28422,
+        coords = { x = -0.005, y = 0.00, z = 0.00 },
+        rotation = { x = 175.0, y = 160.0, z = 0.0 },
+    }    
+)
+    Citizen.Wait(4000)
     TriggerServerEvent('QBCore:Server:AddItem', "burger-meat", 1)
-    end
+    QBCore.Functions.Notify("You cooked the meat", "success")
+    StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
+end
 
 function MakeSoftDrink()
-
+    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'soda', 0.6)
     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-sodasyrup", 1)
-    QBCore.Functions.Progressbar("pickup", "Filling a cup..", 20000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Filling a cup..", 4000, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = false,
     })
-    Citizen.Wait(20000)
+    Citizen.Wait(4000)
     TriggerServerEvent('QBCore:Server:AddItem', "burger-softdrink", 1)
+    QBCore.Functions.Notify("You made a Soda", "success")
     end  
 
 
 function MakeMShake()
 
     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-mshakeformula", 1)
-    QBCore.Functions.Progressbar("pickup", "Filling up a cup..", 20000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Filling up a cup..", 4000, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = false,
     })
-    Citizen.Wait(20000)
+    Citizen.Wait(4000)
     TriggerServerEvent('QBCore:Server:AddItem', "burger-mshake", 1)
+    QBCore.Functions.Notify("You made a Milkshake", "success")
     end  
-
-function MakeTorpedo()
-
-    TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
-    TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
-    QBCore.Functions.Progressbar("pickup", "Making a torpedo..", 20000, false, true, {
-        disableMovement = true,
-        disableCarMovement = false,
-        disableMouse = false,
-        disableCombat = false,
-    })
-    Citizen.Wait(20000)
-    TriggerServerEvent('QBCore:Server:AddItem', "burger-torpedo", 1)
-    end      
-    
+   
 
 -- bt target -
 
 Citizen.CreateThread(function()
     
 
-    exports['bt-target']:AddBoxZone("Duty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
+    exports['qtarget']:AddBoxZone("Duty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
         name = "Duty",
         heading = 32,
         debugPoly = false,
@@ -272,10 +474,10 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['bt-target']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
+    exports['qtarget']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
         name = "burger_tray_1",
         heading = 35.0,
-        debugPoly = true,
+        debugPoly = false,
         minZ=13.8,
         maxZ=14.3,
     }, {
@@ -289,10 +491,10 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['bt-target']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
+    exports['qtarget']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
         name="burger_tray_2",
         heading=318,
-        debugPoly=true,
+        debugPoly=false,
         minZ=14.0,
         maxZ=14.4,
     }, {
@@ -306,7 +508,7 @@ Citizen.CreateThread(function()
         },
         distance = 1.5
     })
-    exports['bt-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
+    exports['qtarget']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
         name="burger_tray_3",
         heading=350,
         debugPoly=false,
@@ -325,7 +527,7 @@ Citizen.CreateThread(function()
     })
 
 
- exports['bt-target']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
+ exports['qtarget']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
     name="burgershotcooker",
     heading=34,
     debugPoly=false,
@@ -343,7 +545,7 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['bt-target']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
+    exports['qtarget']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
         name="burgershotcooker2 ",
         heading=34,
         debugPoly=false,
@@ -364,7 +566,7 @@ Citizen.CreateThread(function()
 
 
 
-    exports['bt-target']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
+    exports['qtarget']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
         name="burgershotfryer",
         heading=35,
         debugPoly=false,
@@ -383,7 +585,7 @@ Citizen.CreateThread(function()
         })
 
 
-        exports['bt-target']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
+        exports['qtarget']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
             name="burgershotdrinks",
             heading=34,
             debugPoly=false,
@@ -401,7 +603,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['bt-target']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
+        exports['qtarget']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
             name="burgershotdrinks2",
             heading=33,
             debugPoly=false,
@@ -420,7 +622,7 @@ Citizen.CreateThread(function()
             })
 
 
-         exports['bt-target']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
+         exports['qtarget']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
             name="burgerfridge",
             heading=35,
             debugPoly=false,
@@ -438,7 +640,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['bt-target']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
+        exports['qtarget']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
             name="burgershotdisplay",
             heading=34,
             debugPoly=false,
@@ -457,7 +659,7 @@ Citizen.CreateThread(function()
             })
 
 
-        exports['bt-target']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
+        exports['qtarget']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
             name="craftburger",
             heading=304,
             debugPoly=false,
@@ -476,7 +678,7 @@ Citizen.CreateThread(function()
             })
 
 
-        exports['bt-target']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
+        exports['qtarget']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
             name="BurgerShot_register_1",
             debugPoly=false,
             heading=125,
@@ -495,7 +697,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['bt-target']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
+        exports['qtarget']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
             name="BurgerShot_register_2",
             debugPoly=false,
             heading=302,
@@ -515,7 +717,7 @@ Citizen.CreateThread(function()
                 })  
 
 
-        exports['bt-target']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
+        exports['qtarget']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
             name="BurgerShot_register_3",
             debugPoly=false,
             heading=125,
@@ -537,7 +739,7 @@ Citizen.CreateThread(function()
 
 
 
-        exports['bt-target']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
+        exports['qtarget']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
             name="BurgerShot_register_4",
             heading=0,
             debugPoly=false,
@@ -565,33 +767,33 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         {
             id = 1,
             header = "Moneyshot Burger",
-            txt = "",
+            txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
-                event = ""
+                event = "qb-burgershot:MoneyShot"
             }
         },
         {
             id = 2,
             header = "Meat Free Burger",
-            txt = "",
+            txt = "Bun , Tomato , Lettuce",
             params = {
-                event = ""
+                event = "qb-burgershot:MeatFree"
             }
         },
         {
             id = 3,
             header = "Bleeder Burger",
-            txt = "",
+            txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
-                event = ""
+                event = "qb-burgershot:BleederBurger"
             }
         },
         {
             id = 4,
             header = "The Heart Stopper",
-            txt = "",
+            txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
-                event = ""
+                event = "qb-burgershot:HeartStopper"
             }
         },
         {
@@ -681,19 +883,10 @@ RegisterNetEvent("qb-burgershot:shop")
 AddEventHandler("qb-burgershot:shop", function()
 
 
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
+    TriggerServerEvent("inventory:server:OpenInventory", "shop", "burgershot", Config.Items)
 
 
 end)
-
-
-
--- RegisterCommand('bill', function(source)
--- 	local job = exports["isPed"]:isPed("myjob")
--- 	if job == 'BurgerShot' then
--- 		TriggerEvent('qb-burgershot:bill')
--- 	end
--- end)
 
 
 

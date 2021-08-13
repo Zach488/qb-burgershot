@@ -35,3 +35,47 @@ AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
 end)
 
 
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientBurger', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local lettuce = Ply.Functions.GetItemByName("burger-lettuce")
+    local meat = Ply.Functions.GetItemByName("burger-meat")
+    local bun = Ply.Functions.GetItemByName("burger-bun")
+    local tomato = Ply.Functions.GetItemByName("burger-tomato")
+    if lettuce ~= nil and meat ~= nil and bun ~= nil and tomato ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientTorpedo', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local meat = Ply.Functions.GetItemByName("burger-meat")
+    local bun = Ply.Functions.GetItemByName("burger-bun")
+    if meat ~= nil and bun ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMeatfree', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local bun = Ply.Functions.GetItemByName("burger-bun")
+    local tomato = Ply.Functions.GetItemByName("burger-tomato")
+    local lettuce = Ply.Functions.GetItemByName("burger-lettuce")
+    if bun ~= nil and lettuce ~= nil and tomato ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+
+
+
