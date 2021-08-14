@@ -1,4 +1,4 @@
-A Burgershot for QBCore Framework
+# A Burgershot for QBCore Framework
 
 Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
@@ -15,7 +15,7 @@ Join https://discord.gg/UsJecaukXa for support.
 
 
 
-Dependencies :
+## Dependencies :
 
 QB Framework - https://github.com/qbcore-framework/qb-core
 
@@ -34,7 +34,7 @@ Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tre
 To Do 
 - Change Back to Bt-target
 
-Insert into #qb-smallresources --> server --> consumables.lua
+### Insert into #qb-smallresources --> server --> consumables.lua
 ```
 --Burgershot
 
@@ -99,7 +99,7 @@ end)
 
 
 
-Insert into #qb-smallresources --> config.lua
+### Insert into #qb-smallresources --> config.lua
 ```
 Consumeables = {
 
@@ -120,7 +120,7 @@ Consumeables = {
 } 
 ```
 
-Insert into #QBCore - Shared.lua
+### Insert into #QBCore - Shared.lua
 
 Change icons for items and change description
 ```
