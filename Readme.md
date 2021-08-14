@@ -26,15 +26,15 @@ bt-target - https://github.com/BerkieBb/bt-target --not used atm
 qtarget - https://github.com/QuantusRP/qtarget
 
 
-Credits : 
+### Credits : 
 
 Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
 
 
-To Do 
+### To Do 
 - Change Back to Bt-target
 
-### Insert into #qb-smallresources --> server --> consumables.lua
+## Insert into #qb-smallresources --> server --> consumables.lua
 ```
 --Burgershot
 
@@ -99,7 +99,7 @@ end)
 
 
 
-### Insert into #qb-smallresources --> config.lua
+## Insert into #qb-smallresources --> config.lua
 ```
 Consumeables = {
 
@@ -120,9 +120,8 @@ Consumeables = {
 } 
 ```
 
-### Insert into #QBCore - Shared.lua
+## Insert into #QBCore - Shared.lua
 
-Change icons for items and change description
 ```
 QBShared.Items = {
 -- Burger Shot
