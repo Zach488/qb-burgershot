@@ -21,7 +21,7 @@ QB Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-bt-target - https://github.com/BerkieBb/bt-target --not used atm
+~~bt-target - https://github.com/BerkieBb/bt-target~~ --not used atm
 
 qtarget - https://github.com/QuantusRP/qtarget
 
