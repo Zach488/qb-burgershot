@@ -1,7 +1,10 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'qb-burgershot'
+description 'qb-burgershot for QBCore Created By DrB1ackBeard'
+
+author 'DrB1ackBeard'
+
 version '1.1'
 
 client_scripts {
