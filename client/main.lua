@@ -422,7 +422,7 @@ function MakePatty()
 end
 
 function MakeSoftDrink()
-    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'soda', 0.6)
+
     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-sodasyrup", 1)
     QBCore.Functions.Progressbar("pickup", "Filling a cup..", 4000, false, true, {
         disableMovement = true,
