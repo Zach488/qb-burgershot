@@ -5,7 +5,7 @@ description 'qb-burgershot for QBCore Created By DrB1ackBeard'
 
 author 'DrB1ackBeard'
 
-version '1.1'
+version '2.0.0'
 
 client_scripts {
 	'@PolyZone/client.lua',

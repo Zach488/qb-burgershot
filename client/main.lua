@@ -456,7 +456,7 @@ function MakeMShake()
 Citizen.CreateThread(function()
     
 
-    exports['qtarget']:AddBoxZone("Duty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
+    exports['qb-target']:AddBoxZone("Duty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
         name = "Duty",
         heading = 32,
         debugPoly = false,
@@ -474,7 +474,7 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['qtarget']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
+    exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
         name = "burger_tray_1",
         heading = 35.0,
         debugPoly = false,
@@ -491,7 +491,7 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['qtarget']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
+    exports['qb-target']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
         name="burger_tray_2",
         heading=318,
         debugPoly=false,
@@ -508,7 +508,7 @@ Citizen.CreateThread(function()
         },
         distance = 1.5
     })
-    exports['qtarget']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
+    exports['qb-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
         name="burger_tray_3",
         heading=350,
         debugPoly=false,
@@ -527,7 +527,7 @@ Citizen.CreateThread(function()
     })
 
 
- exports['qtarget']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
+ exports['qb-target']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
     name="burgershotcooker",
     heading=34,
     debugPoly=false,
@@ -545,7 +545,7 @@ Citizen.CreateThread(function()
         distance = 1.5
     })
 
-    exports['qtarget']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
+    exports['qb-target']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
         name="burgershotcooker2 ",
         heading=34,
         debugPoly=false,
@@ -566,7 +566,7 @@ Citizen.CreateThread(function()
 
 
 
-    exports['qtarget']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
+    exports['qb-target']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
         name="burgershotfryer",
         heading=35,
         debugPoly=false,
@@ -585,7 +585,7 @@ Citizen.CreateThread(function()
         })
 
 
-        exports['qtarget']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
+        exports['qb-target']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
             name="burgershotdrinks",
             heading=34,
             debugPoly=false,
@@ -603,7 +603,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qtarget']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
+        exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
             name="burgershotdrinks2",
             heading=33,
             debugPoly=false,
@@ -622,7 +622,7 @@ Citizen.CreateThread(function()
             })
 
 
-         exports['qtarget']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
+         exports['qb-target']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
             name="burgerfridge",
             heading=35,
             debugPoly=false,
@@ -640,7 +640,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qtarget']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
+        exports['qb-target']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
             name="burgershotdisplay",
             heading=34,
             debugPoly=false,
@@ -659,7 +659,7 @@ Citizen.CreateThread(function()
             })
 
 
-        exports['qtarget']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
+        exports['qb-target']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
             name="craftburger",
             heading=304,
             debugPoly=false,
@@ -678,7 +678,7 @@ Citizen.CreateThread(function()
             })
 
 
-        exports['qtarget']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
+        exports['qb-target']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
             name="BurgerShot_register_1",
             debugPoly=false,
             heading=125,
@@ -697,7 +697,7 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qtarget']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
+        exports['qb-target']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
             name="BurgerShot_register_2",
             debugPoly=false,
             heading=302,
@@ -717,7 +717,7 @@ Citizen.CreateThread(function()
                 })  
 
 
-        exports['qtarget']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
+        exports['qb-target']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
             name="BurgerShot_register_3",
             debugPoly=false,
             heading=125,
@@ -739,7 +739,7 @@ Citizen.CreateThread(function()
 
 
 
-        exports['qtarget']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
+        exports['qb-target']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
             name="BurgerShot_register_4",
             heading=0,
             debugPoly=false,

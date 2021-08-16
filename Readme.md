@@ -2,14 +2,6 @@
 
 Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
-Please Note this is a Work in Progress , Code won't be 100% optimized. 
-I used qTarget as Bt-target didn't work, might work now havn't tested.
-Only Problem with qTarget is, it doesn't have any QBCore job functionality so the job = "burgershot" 
-doesn't work, use Bt-target to resolve and change qtarget to bt-target in all the exports.
-
-
-
-
 Please feel free to contribute or improve code will be much appreciated.
 Join https://discord.gg/UsJecaukXa for support.
 
@@ -23,13 +15,12 @@ QB Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-qtarget - https://github.com/QuantusRP/qtarget
+qb-target - https://github.com/BerkieBb/qb-target
 
 nh-context - https://github.com/nerohiro/nh-context
 
 nh-keyboard - https://github.com/nerohiro/nh-keyboard
 
-~~bt-target - https://github.com/BerkieBb/bt-target~~ --not used atm
 
 ## Credits : 
 
@@ -37,7 +28,7 @@ Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tre
 
 
 ## To Do 
-- Change Back to Bt-target
+- Nothing Yet
 
 ## Insert into #qb-smallresources --> server --> consumables.lua
 ```
