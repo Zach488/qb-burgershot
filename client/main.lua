@@ -765,8 +765,13 @@ end)
 RegisterNetEvent('nh-context:Burgers', function(data)
     TriggerEvent('nh-context:sendMenu', {
         {
+            id = 0,
+            header = "| Available Burgers |",
+            txt = "",
+        },
+        {
             id = 1,
-            header = "Moneyshot Burger",
+            header = "• Moneyshot Burger",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
                 event = "qb-burgershot:MoneyShot"
@@ -774,7 +779,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         },
         {
             id = 2,
-            header = "Meat Free Burger",
+            header = "• Meat Free Burger",
             txt = "Bun , Tomato , Lettuce",
             params = {
                 event = "qb-burgershot:MeatFree"
@@ -782,7 +787,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         },
         {
             id = 3,
-            header = "Bleeder Burger",
+            header = "• Bleeder Burger",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
                 event = "qb-burgershot:BleederBurger"
@@ -790,7 +795,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         },
         {
             id = 4,
-            header = "The Heart Stopper",
+            header = "• The Heart Stopper",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
                 event = "qb-burgershot:HeartStopper"
@@ -798,11 +803,16 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         },
         {
             id = 5,
-            header = "Torpedo Roll",
+            header = "• Torpedo Roll",
             txt = "Bun , Cooked Meat",
             params = {
                 event = "qb-burgershot:Torpedo"
             }
+        },
+        {
+            id = 6,
+            header = "Close (ESC)",
+            txt = "",
         },
     })
 end)
@@ -810,10 +820,14 @@ end)
 
 RegisterNetEvent('nh-context:OrderMenu', function(data)
     TriggerEvent('nh-context:sendMenu', {
-
+        {
+            id = 0,
+            header = "| Fridge |",
+            txt = "",
+        },
         {
             id = 1,
-            header = "Order Items",
+            header = "• Order Items",
             txt = "Order New Ingredients!",
             params = {
                 event = "qb-burgershot:shop"
@@ -821,21 +835,30 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
         },
         {
             id = 2,
-            header = "Open Fridge",
+            header = "• Open Fridge",
             txt = "See what you have in storage",
             params = {
                 event = "qb-burgershot:Storage2"
             }
+        },
+        {
+            id = 3,
+            header = "Close (ESC)",
+            txt = "",
         },
     })
 end)
 
 RegisterNetEvent('nh-context:DrinkMenu', function(data)
     TriggerEvent('nh-context:sendMenu', {
-
+        {
+            id = 0,
+            header = "| Drink Menu |",
+            txt = "",
+        },
         {
             id = 1,
-            header = "Soft Drink",
+            header = "• Soft Drink",
             txt = "Soda Syrup",
             params = {
                 event = "qb-burgershot:SoftDrink"
@@ -843,11 +866,16 @@ RegisterNetEvent('nh-context:DrinkMenu', function(data)
         },
         {
             id = 2,
-            header = "Milkshake",
+            header = "• Milkshake",
             txt = "Milkshake Formula",
             params = {
                 event = "qb-burgershot:mShake"
             }
+        },
+        {
+            id = 3,
+            header = "Close (ESC)",
+            txt = "",
         },
     })
 end)
