@@ -757,6 +757,7 @@ Citizen.CreateThread(function()
                         },
                         distance = 1.5
             })
+
 end)
 
 

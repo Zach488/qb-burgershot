@@ -71,7 +71,6 @@ RegisterNetEvent('qb-burgershot:garage')
 AddEventHandler('qb-burgershot:garage', function(bs)
     local vehicle = bs.vehicle
     local coords = { ['x'] = -1172.861, ['y'] = -888.4072, ['z'] = 13.940833 -1, ['h'] = 40.516719 }
-    
     QBCore.Functions.GetPlayerData(function(PlayerData)
         if PlayerData.job.name == "burgershot" then
             if vehicle == 'stalion2' then
@@ -107,12 +106,12 @@ RegisterNetEvent('garage:menu', function()
     TriggerEvent('nh-context:sendMenu', {
         {
             id = 1,
-            header = "BurgerShot Garage",
+            header = "| BurgerShot Garage |",
             txt = ""
         },
         {
             id = 2,
-            header = "Stallion",
+            header = "• Stallion",
             txt = "Declasse Burger Shot Stallion",
             params = {
                 event = "qb-burgershot:garage",
@@ -123,7 +122,7 @@ RegisterNetEvent('garage:menu', function()
         },
         {
             id = 3,
-            header = "Store Vehicle",
+            header = "• Store Vehicle",
             txt = "Store Vehicle Inside Garage",
             params = {
                 event = "qb-burgershot:storecar",
@@ -131,7 +130,12 @@ RegisterNetEvent('garage:menu', function()
                     
                 }
             }
-        },		
+        },	
+        {
+            id = 4,
+            header = "Close (ESC)",
+            txt = "",
+        },	
     })
 end)
 

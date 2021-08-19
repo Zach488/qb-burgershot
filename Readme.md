@@ -116,7 +116,7 @@ Consumeables = {
 } 
 ```
 
-## Insert into #QBCore - Shared.lua
+## Insert into #qb-core - Shared.lua
 
 ```
 QBShared.Items = {
@@ -151,7 +151,6 @@ QBShared.Jobs = {
     ["burgershot"] = {
 		label = "Burgershot Employee",
 		defaultDuty = true,
-		bossmenu = vector3(0, 0, 0),
 		grades = {
             ['0'] = {
                 name = "Trainee",
@@ -181,3 +180,27 @@ QBShared.Jobs = {
 
 
 
+## Insert into #qb-bossmenu - config.lua
+```
+['burgershot'] = vector3(-1192.04, -902.476, 13.998)),
+```
+
+## Insert into #qb-target - config.lua - config.targetmodels
+```
+["burgershotgarage"] = {
+			models = {
+				"ig_floyd"
+			},
+			options = {
+				{
+					type = "client",
+					event = "garage:menu",
+					icon = "fas fa-car",
+					label = "BurgerShot Garage",
+					-- job = "police",
+				},
+			},
+			distance = 2.5,
+		},
+
+```
