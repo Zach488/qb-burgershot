@@ -15,6 +15,7 @@ client_scripts {
     '@PolyZone/ComboZone.lua',
 	'config.lua',
 	'client/main.lua',
+	'client/garage.lua',
 }
 
 server_scripts {
