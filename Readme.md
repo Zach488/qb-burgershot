@@ -197,7 +197,7 @@ QBShared.Jobs = {
 					event = "garage:menu",
 					icon = "fas fa-car",
 					label = "BurgerShot Garage",
-					-- job = "police",
+					job = "burgershot",
 				},
 			},
 			distance = 2.5,
