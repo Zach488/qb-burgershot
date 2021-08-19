@@ -2,9 +2,11 @@
 
 Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
--Please make sure u use the latest dependencies aswell as core for this in order to work.
--This Job has been tested on the latest build as of 19/08/2021.
--No support will be given to people using scripts created outside of the QBCore Framework meaning external scripts such as aj-inventory.
+- Please make sure u use the latest dependencies aswell as core for this in order to work.
+
+- This Job has been tested on the latest build as of 19/08/2021.
+
+- No support will be given to people using scripts created outside of the QBCore Framework meaning external scripts such as aj-inventory.
 
 
 ## Dependencies :
