@@ -1,7 +1,3 @@
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
----Testing Needed
-
 RegisterServerEvent("qb-burgershot:bill:player")
 AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
