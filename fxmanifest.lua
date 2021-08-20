@@ -1,11 +1,14 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'qb-burgershot for QBCore Created By DrB1ackBeard'
-
 author 'DrB1ackBeard'
-
+description 'qb-burgershot for QBCore Created By DrB1ackBeard'
 version '2.0.0'
+
+shared_scripts {
+    'config.lua',
+    '@qb-core/import.lua'
+}
 
 client_scripts {
 	'@PolyZone/client.lua',
@@ -13,13 +16,8 @@ client_scripts {
     '@PolyZone/EntityZone.lua',
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
-	'config.lua',
 	'client/main.lua',
-	'client/garage.lua',
+	'client/garage.lua'
 }
 
-server_scripts {
-    'server/main.lua',
-	'config.lua',
-}
-
+server_script 'server/main.lua'
