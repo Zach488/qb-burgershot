@@ -196,7 +196,7 @@ QBShared.Jobs = {
 			options = {
 				{
 					type = "client",
-					event = "garage:menu",
+					event = "garage:BurgerShotGarage",
 					icon = "fas fa-car",
 					label = "BurgerShot Garage",
 					job = "burgershot",
