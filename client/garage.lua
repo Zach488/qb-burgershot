@@ -94,7 +94,7 @@ AddEventHandler('qb-burgershot:storecar', function()
     QBCore.Functions.DeleteVehicle(car)
 end)
 
-RegisterNetEvent('garage:menu', function()
+RegisterNetEvent('garage:BurgerShotGarage', function()
     TriggerEvent('nh-context:sendMenu', {
         {
             id = 1,
