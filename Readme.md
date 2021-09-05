@@ -17,7 +17,7 @@ QB Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-qb-target - https://github.com/BerkieBb/qb-target
+qb-target v2.5.2 - https://github.com/BerkieBb/qb-target
 
 nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~
 
@@ -192,7 +192,7 @@ QBShared.Jobs = {
 ```
 
 ## Insert into #qb-target - config.lua - config.targetmodels
-```
+``` 
 ["burgershotgarage"] = {
 			models = {
 				"ig_floyd"
@@ -204,7 +204,7 @@ QBShared.Jobs = {
 					icon = "fas fa-car",
 					label = "BurgerShot Garage",
 					job = "burgershot",
-				},
+				}
 			},
 			distance = 2.5,
 		},
