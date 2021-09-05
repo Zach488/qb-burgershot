@@ -73,6 +73,20 @@ QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMeatfree', f
 end)
 
 
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMurderMeal', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local fries = Ply.Functions.GetItemByName("burger-fries")
+    local heartstopper = Ply.Functions.GetItemByName("burger-heartstopper")
+    local software = Ply.Functions.GetItemByName("burger-softdrink")
+    if fries ~= nil and heartstopper ~= nil and software ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+
 QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent("qb-burgershot:MurderMeal", source, item.name)

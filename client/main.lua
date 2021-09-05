@@ -890,7 +890,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             header = "• Murder Meal",
             txt = "The Heart Stopper, Fries and SoftDrink",
             params = {
-                event = "qb-burgershot:Torpedo"
+                event = "qb-burgershot:CreateMurderMeal"
             }
         },
         {
