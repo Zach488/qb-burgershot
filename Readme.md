@@ -145,6 +145,9 @@ QBShared.Items = {
 	["burger-sodasyrup"] 		 	 = {["name"] = "burger-sodasyrup", 				["label"] = "Soda Syrup", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "bs_ingredients_hfcs.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 }
 
+["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 				["label"] = "Murder Meal", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "stilltocome.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
+}
+
 ```
 
 ```
