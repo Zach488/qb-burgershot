@@ -1,3 +1,5 @@
+#Currently Outdated as i need to test the new functionality and change qb-target functions in the client side . Updated to come in the following weeks
+
 # A Burgershot for QBCore Framework
 
 Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
