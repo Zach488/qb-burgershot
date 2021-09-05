@@ -1,4 +1,4 @@
-#Currently Outdated as i need to test the new functionality and change qb-target functions in the client side . Updated to come in the following weeks
+# Currently Outdated as i need to test the new functionality and change qb-target functions in the client side . Updated to come in the following weeks
 
 # A Burgershot for QBCore Framework
 
@@ -19,9 +19,9 @@ PolyZone - https://github.com/mkafrin/PolyZone
 
 qb-target - https://github.com/BerkieBb/qb-target
 
-nh-context - https://github.com/nerohiro/nh-context (owner removed script)
+nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~
 
-nh-keyboard - https://github.com/nerohiro/nh-keyboard (owner removed script)
+nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~
 
 
 ## Credits : 
