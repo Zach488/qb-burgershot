@@ -27,8 +27,9 @@ nh-keyboard - https://github.com/nerohiro/nh-keyboard (owner removed script)
 Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
 
 
-## To Do 
-- Nothing Yet
+## Soon To Come
+- Random Toys in the murder meal box. 
+- Lucky tickets that gives a player certain amount of money or rewward. 
 
 ## Insert into #qb-smallresources --> server --> consumables.lua
 ```
