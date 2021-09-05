@@ -1,8 +1,6 @@
-# *Currently Outdated as i need to test the new functionality and change qb-target functions in the client side . Updated to come in the following weeks*
-
 # A Burgershot for QBCore Framework
 
-Preview : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
+Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 - Please make sure u use the latest dependencies aswell as core for this in order to work.
 
@@ -30,7 +28,7 @@ Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tre
 
 
 ## Soon To Come
-- Random Toys in the murder meal box. 
+
 - Lucky tickets that gives a player certain amount of money or rewward. 
 
 ## Insert into #qb-smallresources --> server --> consumables.lua
@@ -146,8 +144,10 @@ QBShared.Items = {
 	["burger-mshakeformula"] 		 = {["name"] = "burger-mshakeformula", 			["label"] = "Milkshake Formula", 		["weight"] = 125, 		["type"] = "item", 		["image"] = "bs_ingredients_icecream.png", ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 	["burger-sodasyrup"] 		 	 = {["name"] = "burger-sodasyrup", 				["label"] = "Soda Syrup", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "bs_ingredients_hfcs.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 }
+	["burger-toy1"] 		 		 = {["name"] = "burger-toy1", 					["label"] = "Action Figure", 			["weight"] = 50, 		["type"] = "item", 		["image"] = "action-figure.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "An Action Figure From the late 90's"},
+	["burger-toy2"] 		 		 = {["name"] = "burger-toy2", 					["label"] = "Pink Teddy", 				["weight"] = 50, 		["type"] = "item", 		["image"] = "beaniebaby.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "A Fluffy Pink Teddy from the Atic"},
+	["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 			["label"] = "Murder Meal", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-box.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
 
-["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 				["label"] = "Murder Meal", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "stilltocome.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
 }
 
 ```
