@@ -73,5 +73,10 @@ QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMeatfree', f
 end)
 
 
+QBCore.Functions.CreateUseableItem("MurderMeal", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-burgershot:MurderMeal", source, item.name)
+  end)
+
 
 
