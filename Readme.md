@@ -25,7 +25,7 @@ nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~
 ## Credits : 
 
 Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
-
+Nero that allowed us to use his scripts and aswell as berkieB for his Qb-target!
 
 ## Soon To Come
 
