@@ -72,7 +72,7 @@ AddEventHandler("qb-burgershot:MurderMeal", function()
 		elseif randomToy == 4 then
 			
 			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy1", 1)
-            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy1"], "add")
+            		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy1"], "add")
 		
 		elseif randomToy < 10 and randomToy > 4 then
 			
@@ -81,7 +81,7 @@ AddEventHandler("qb-burgershot:MurderMeal", function()
 		elseif randomToy == 10 then	
  
 			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy2", 1)	
-            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy2"], "add")
+            		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy2"], "add")
 		else	
             QBCore.Functions.Notify("No toy in Box Looool", "error")
         end
@@ -106,14 +106,14 @@ AddEventHandler("qb-burgershot:CreateMurderMeal", function()
 					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-fries", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "burger-heartstopper", 1)
+                    			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-heartstopper", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-softdrink", 1)
 
 
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-murdermeal", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-murdermeal"], "add")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-murdermeal"], "add")
 
-                    QBCore.Functions.Notify("You made a A Murder Meal", "success")
+                    			QBCore.Functions.Notify("You made a A Murder Meal", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -152,8 +152,8 @@ AddEventHandler("qb-burgershot:BleederBurger", function()
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-bleeder", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-bleeder"], "add")
-                    QBCore.Functions.Notify("You made a Bleeder Burger", "success")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-bleeder"], "add")
+                    			QBCore.Functions.Notify("You made a Bleeder Burger", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -192,8 +192,8 @@ AddEventHandler("qb-burgershot:MoneyShot", function()
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-moneyshot", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-moneyshot"], "add")
-                    QBCore.Functions.Notify("You made a MoneyShot Burger", "success")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-moneyshot"], "add")
+                    			QBCore.Functions.Notify("You made a MoneyShot Burger", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -232,8 +232,8 @@ AddEventHandler("qb-burgershot:HeartStopper", function()
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-heartstopper", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-heartstopper"], "add")
-                    QBCore.Functions.Notify("You made a Heart Stopper", "success")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-heartstopper"], "add")
+                    			QBCore.Functions.Notify("You made a Heart Stopper", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -271,8 +271,8 @@ AddEventHandler("qb-burgershot:Torpedo", function()
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-torpedo", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-torpedo"], "add")
-                    QBCore.Functions.Notify("You made a Torpedo Roll", "success")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-torpedo"], "add")
+                    			QBCore.Functions.Notify("You made a Torpedo Roll", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -307,11 +307,11 @@ AddEventHandler("qb-burgershot:MeatFree", function()
 					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
+                    			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
 					TriggerServerEvent('QBCore:Server:AddItem', "burger-meatfree", 1)
-                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-meatfree"], "add")
-                    QBCore.Functions.Notify("You made a Meat Free Burger", "success")
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-meatfree"], "add")
+                   			QBCore.Functions.Notify("You made a Meat Free Burger", "success")
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
@@ -443,28 +443,28 @@ end)
 
 -- Functions --
 function MakeFries()
-TriggerServerEvent('QBCore:Server:RemoveItem', "burger-potato", 1)
-QBCore.Functions.Progressbar("pickup", "Frying the fries..", 4000, false, true, {
-    disableMovement = true,
-    disableCarMovement = false,
-    disableMouse = false,
-    disableCombat = false,
-},{
-    animDict = "amb@prop_human_bbq@male@base",
-    anim = "base",
-    flags = 8,
-    }, {
-        model = "prop_cs_fork",
-        bone = 28422,
-        coords = { x = -0.005, y = 0.00, z = 0.00 },
-        rotation = { x = 175.0, y = 160.0, z = 0.0 },
-    }
-)
-Citizen.Wait(4000)
-TriggerServerEvent('QBCore:Server:AddItem', "burger-fries", 4)
-TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-fries"], "add")
-QBCore.Functions.Notify("You made 4 fries", "success")
-StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
+	TriggerServerEvent('QBCore:Server:RemoveItem', "burger-potato", 1)
+	QBCore.Functions.Progressbar("pickup", "Frying the fries..", 4000, false, true, {
+	    disableMovement = true,
+	    disableCarMovement = false,
+	    disableMouse = false,
+	    disableCombat = false,
+	},{
+	    animDict = "amb@prop_human_bbq@male@base",
+	    anim = "base",
+	    flags = 8,
+	    }, {
+		model = "prop_cs_fork",
+		bone = 28422,
+		coords = { x = -0.005, y = 0.00, z = 0.00 },
+		rotation = { x = 175.0, y = 160.0, z = 0.0 },
+	    }
+	)
+	Citizen.Wait(4000)
+	TriggerServerEvent('QBCore:Server:AddItem', "burger-fries", 4)
+	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-fries"], "add")
+	QBCore.Functions.Notify("You made 4 fries", "success")
+	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 
@@ -506,7 +506,7 @@ function MakeSoftDrink()
     TriggerServerEvent('QBCore:Server:AddItem', "burger-softdrink", 1)
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-softdrink"], "add")
     QBCore.Functions.Notify("You made a Soda", "success")
-    end  
+end  
 
 
 function MakeMShake()
@@ -522,7 +522,7 @@ function MakeMShake()
     TriggerServerEvent('QBCore:Server:AddItem', "burger-mshake", 1)
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-mshake"], "add")
     QBCore.Functions.Notify("You made a Milkshake", "success")
-    end  
+end  
    
 
 -- bt target -
