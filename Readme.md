@@ -17,9 +17,9 @@ PolyZone - https://github.com/mkafrin/PolyZone
 
 qb-target v2.5.2 - https://github.com/BerkieBb/qb-target
 
-nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~
+nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
 
-nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~
+nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~ See folder [NH] for scripts
 
 
 ## Credits : 
