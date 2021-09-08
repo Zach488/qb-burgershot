@@ -92,7 +92,6 @@ AddEventHandler("qb-burgershot:CreateMurderMeal", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientMurderMeal', function(HasItems)  
     		if HasItems then
-				Working = true
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making A Murder Meal..", 4000, false, true, {
 					disableMovement = true,
@@ -104,7 +103,7 @@ AddEventHandler("qb-burgershot:CreateMurderMeal", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-fries", 1)
                     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-heartstopper", 1)
@@ -118,7 +117,7 @@ AddEventHandler("qb-burgershot:CreateMurderMeal", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the items to make this", "error")
@@ -134,7 +133,7 @@ AddEventHandler("qb-burgershot:BleederBurger", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				Working = true
+				
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
 					disableMovement = true,
@@ -146,7 +145,7 @@ AddEventHandler("qb-burgershot:BleederBurger", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
@@ -158,7 +157,7 @@ AddEventHandler("qb-burgershot:BleederBurger", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
@@ -174,7 +173,7 @@ AddEventHandler("qb-burgershot:MoneyShot", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				Working = true
+				
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
 					disableMovement = true,
@@ -186,7 +185,7 @@ AddEventHandler("qb-burgershot:MoneyShot", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
@@ -198,7 +197,7 @@ AddEventHandler("qb-burgershot:MoneyShot", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
@@ -214,7 +213,7 @@ AddEventHandler("qb-burgershot:HeartStopper", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				Working = true
+				
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
 					disableMovement = true,
@@ -226,7 +225,7 @@ AddEventHandler("qb-burgershot:HeartStopper", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
@@ -238,7 +237,7 @@ AddEventHandler("qb-burgershot:HeartStopper", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
@@ -255,7 +254,7 @@ AddEventHandler("qb-burgershot:Torpedo", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientTorpedo', function(HasItems)  
     		if HasItems then
-				Working = true
+				
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making A Torpedo..", 4000, false, true, {
 					disableMovement = true,
@@ -267,7 +266,7 @@ AddEventHandler("qb-burgershot:Torpedo", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meat", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bun", 1)
@@ -277,7 +276,7 @@ AddEventHandler("qb-burgershot:Torpedo", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
@@ -293,7 +292,7 @@ AddEventHandler("qb-burgershot:MeatFree", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientMeatfree', function(HasItems)  
     		if HasItems then
-				Working = true
+				
 				TriggerEvent('inventory:client:busy:status', true)
 				QBCore.Functions.Progressbar("pickup_sla", "Making A Meat Free Burger..", 4000, false, true, {
 					disableMovement = true,
@@ -305,7 +304,7 @@ AddEventHandler("qb-burgershot:MeatFree", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					Working = false
+					
 					TriggerEvent('inventory:client:busy:status', false)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "burger-tomato", 1)
                     TriggerServerEvent('QBCore:Server:RemoveItem', "burger-lettuce", 1)
@@ -316,7 +315,7 @@ AddEventHandler("qb-burgershot:MeatFree", function()
 				end, function()
 					TriggerEvent('inventory:client:busy:status', false)
 					QBCore.Functions.Notify("Cancelled..", "error")
-					Working = false
+					
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
