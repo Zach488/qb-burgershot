@@ -17,7 +17,8 @@ client_scripts {
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
 	'client/main.lua',
-	'client/garage.lua'
+	'client/garage.lua',
+	'client/menus.lua'
 }
 
 server_script 'server/main.lua'
