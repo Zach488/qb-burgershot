@@ -55,6 +55,60 @@ Citizen.CreateThread(function()
 end) 
 
 
+
+
+RegisterNetEvent("qb-burgershot:DutyB")
+AddEventHandler("qb-burgershot:DutyB", function()
+    TriggerServerEvent("QBCore:ToggleDuty")
+end)
+
+RegisterNetEvent("qb-burgershot:Tray1")
+AddEventHandler("qb-burgershot:Tray1", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "burgertray1")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray1", {
+        maxweight = 10000,
+        slots = 6,
+    })
+end)
+
+RegisterNetEvent("qb-burgershot:Tray4")
+AddEventHandler("qb-burgershot:Tray4", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "burgertray4")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray4", {
+        maxweight = 10000,
+        slots = 6,
+    })
+end)
+
+RegisterNetEvent("qb-burgershot:Tray3")
+AddEventHandler("qb-burgershot:Tray3", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "burgertray3")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray3", {
+        maxweight = 10000,
+        slots = 6,
+    })
+end)
+
+RegisterNetEvent("qb-burgershot:Storage")
+AddEventHandler("qb-burgershot:Storage", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "burgerstorage")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgerstorage", {
+        maxweight = 250000,
+        slots = 40,
+    })
+end)
+
+RegisterNetEvent("qb-burgershot:Storage2")
+AddEventHandler("qb-burgershot:Storage2", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "burgerstorage2")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgerstorage2", {
+        maxweight = 250000,
+        slots = 40,
+    })
+end)
+
+
+--Meal Creations
 RegisterNetEvent("qb-burgershot:MurderMeal")
 AddEventHandler("qb-burgershot:MurderMeal", function()
 		local randomToy = math.random(1,10)
@@ -387,58 +441,6 @@ AddEventHandler("qb-burgershot:PattyFry", function()
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
-end)
-
-
-
-RegisterNetEvent("qb-burgershot:DutyB")
-AddEventHandler("qb-burgershot:DutyB", function()
-    TriggerServerEvent("QBCore:ToggleDuty")
-end)
-
-RegisterNetEvent("qb-burgershot:Tray1")
-AddEventHandler("qb-burgershot:Tray1", function()
-    TriggerEvent("inventory:client:SetCurrentStash", "burgertray1")
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray1", {
-        maxweight = 10000,
-        slots = 6,
-    })
-end)
-
-RegisterNetEvent("qb-burgershot:Tray4")
-AddEventHandler("qb-burgershot:Tray4", function()
-    TriggerEvent("inventory:client:SetCurrentStash", "burgertray4")
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray4", {
-        maxweight = 10000,
-        slots = 6,
-    })
-end)
-
-RegisterNetEvent("qb-burgershot:Tray3")
-AddEventHandler("qb-burgershot:Tray3", function()
-    TriggerEvent("inventory:client:SetCurrentStash", "burgertray3")
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgertray3", {
-        maxweight = 10000,
-        slots = 6,
-    })
-end)
-
-RegisterNetEvent("qb-burgershot:Storage")
-AddEventHandler("qb-burgershot:Storage", function()
-    TriggerEvent("inventory:client:SetCurrentStash", "burgerstorage")
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgerstorage", {
-        maxweight = 250000,
-        slots = 40,
-    })
-end)
-
-RegisterNetEvent("qb-burgershot:Storage2")
-AddEventHandler("qb-burgershot:Storage2", function()
-    TriggerEvent("inventory:client:SetCurrentStash", "burgerstorage2")
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "burgerstorage2", {
-        maxweight = 250000,
-        slots = 40,
-    })
 end)
 
 -- Functions --
