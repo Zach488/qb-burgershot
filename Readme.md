@@ -29,7 +29,7 @@ Nero that allowed us to use his scripts and aswell as berkieB for his Qb-target!
 
 ## Soon To Come
 
-- Lucky tickets that gives a player certain amount of money or rewward. 
+- Lucky tickets that gives a player certain amount of money or reward. 
 
 ## Insert into #qb-smallresources --> server --> consumables.lua
 ```
