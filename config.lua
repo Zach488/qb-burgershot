@@ -5,6 +5,51 @@ Config.GaragePedlocation = {
 }
 
 
+-- Config.Locations = {
+--     ["duty"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },    
+--     ["tray1"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },
+--     ["tray2"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },
+--     ["tray3"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },  
+--     ["pattycooker"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--         [2] = vector4(0 , 0 , 0, 0),
+--     }, 
+--     ["fryer"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     }, 
+--     ["drinks"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--         [2] = vector4(0 , 0 , 0, 0),
+--     },   
+--     ["fridge"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },      
+--     ["storage"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },
+--     ["craftburger"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     },    
+--     ["cashregister"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--         [2] = vector4(0 , 0 , 0, 0),
+--         [3] = vector4(0 , 0 , 0, 0),
+--         [4] = vector4(0 , 0 , 0, 0),
+--     },   
+--     ["garage"] = {
+--         [1] = vector4(0 , 0 , 0, 0),
+--     }, 
+--  }
+
+
 Config.Items = {
 label = "Shop",
     slots = 7,
