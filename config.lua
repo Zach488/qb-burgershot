@@ -4,6 +4,7 @@ Config.GaragePedlocation = {
     {cords = vector3(-1178.588, -891.9196, 13.799622 -1), h = 302.58825}  -- Garage NPC Spawn Location.
 }
 
+--if u are not using qb-target uncomment this.
 
 -- Config.Locations = {
 --     ["duty"] = {
