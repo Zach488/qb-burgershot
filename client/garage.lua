@@ -1,4 +1,4 @@
-local PlayerData = {}
+PlayerData = {}
 local pedspawned = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
@@ -11,16 +11,20 @@ AddEventHandler('QBCore:Client:OnJobUpdate', function(job)
      PlayerJob = job
 end)
 
+RegisterNetEvent('QBCore:Player:SetPlayerData')
+AddEventHandler('QBCore:Player:SetPlayerData', function(val)
+	PlayerData = val
+end)
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
-		for k, v in pairs(Config.GaragePedlocation) do
+		for k, v in pairs(Config.GaragePedLocations) do
 			local pos = GetEntityCoords(PlayerPedId())	
-			local dist = #(v.cords - pos)
+			local dist = #(pos - vector3(v.coords.x, v.coords.y, v.coords.z))
 			
-			if dist < 40 and pedspawned == false then
-				TriggerEvent('spawn:ped',v.cords,v.h)
+			if dist < 40 and not pedspawned then
+				TriggerEvent('spawn:ped', v.coords)
 				pedspawned = true
 			end
 			if dist >= 35 then
@@ -32,61 +36,51 @@ Citizen.CreateThread(function()
 end)
 
 RegisterNetEvent('spawn:ped')
-AddEventHandler('spawn:ped',function(coords,heading)
-	local hash = GetHashKey('ig_floyd')
-	if not HasModelLoaded(hash) then
-		RequestModel(hash)
-		Wait(10)
-	end
+AddEventHandler('spawn:ped',function(coords)
+	local hash = `ig_floyd`
+
+	RequestModel(hash)
 	while not HasModelLoaded(hash) do 
 		Wait(10)
 	end
 
-    pedspawned = true
-	npc = CreatePed(5, hash, coords, heading, false, false)
+    	pedspawned = true
+	npc = CreatePed(5, hash, coords.x, coords.y, coords.z - 1.0, coords.w, false, false)
 	FreezeEntityPosition(npc, true)
-    SetBlockingOfNonTemporaryEvents(npc, true)
+    	SetBlockingOfNonTemporaryEvents(npc, true)
 	loadAnimDict("amb@world_human_cop_idles@male@idle_b") 
-	while not TaskPlayAnim(npc, "amb@world_human_cop_idles@male@idle_b", "idle_e", 8.0, 1.0, -1, 17, 0, 0, 0, 0) do
-	Wait(1000)
-	end
+	TaskPlayAnim(npc, "amb@world_human_cop_idles@male@idle_b", "idle_e", 8.0, 1.0, -1, 17, 0, 0, 0, 0)
 end)
 
-function loadAnimDict( dict )
-    while ( not HasAnimDictLoaded( dict ) ) do
-        RequestAnimDict( dict )
-        Citizen.Wait( 5 )
+function loadAnimDict(dict)
+    RequestAnimDict(dict)
+    while not HasAnimDictLoaded(dict) do
+        Citizen.Wait(5)
     end
 end
 
 RegisterNetEvent('qb-burgershot:garage')
 AddEventHandler('qb-burgershot:garage', function(bs)
     local vehicle = bs.vehicle
-    local coords = { ['x'] = -1172.861, ['y'] = -888.4072, ['z'] = 13.940833 -1, ['h'] = 40.516719 }
-    QBCore.Functions.GetPlayerData(function(PlayerData)
+    local coords = vector4(-1172.861, -888.4072, 13.940833, 40.516719)
         if PlayerData.job.name == "burgershot" then
-            if vehicle == 'stalion2' then
-			
+            if vehicle == 'stalion2' then		
                 QBCore.Functions.SpawnVehicle(vehicle, function(veh)
                     SetVehicleNumberPlateText(veh, "BURGER"..tostring(math.random(1000, 9999)))
                     exports['LegacyFuel']:SetFuel(veh, 100.0)
-                    SetEntityHeading(veh, coords.h)
-                    TaskWarpPedIntoVehicle(GetPlayerPed(-1), veh, -1)
+                    SetEntityHeading(veh, coords.w)
+                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
                     TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
                     SetVehicleEngineOn(veh, true, true)
                 end, coords, true)
             end
-        else 
+        else
             QBCore.Functions.Notify('You are not an employee of BurgerShot.', 'error')
-            
         end
-    end)    
 end)
 
 RegisterNetEvent('qb-burgershot:storecar')
 AddEventHandler('qb-burgershot:storecar', function()
-    local Player = QBCore.Functions.GetPlayerData()
-
     QBCore.Functions.Notify('Work Vehicle Stored!')
     local car = GetVehiclePedIsIn(PlayerPedId(),true)
     NetworkFadeOutEntity(car, true,false)
@@ -130,5 +124,3 @@ RegisterNetEvent('garage:BurgerShotGarage', function()
         },	
     })
 end)
-
-
