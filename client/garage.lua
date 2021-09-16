@@ -24,7 +24,7 @@ Citizen.CreateThread(function()
 			local dist = #(pos - vector3(v.coords.x, v.coords.y, v.coords.z))
 			
 			if dist < 40 and not pedspawned then
-				TriggerEvent('spawn:ped', v.coords)
+				TriggerEvent('qb-burgershot:spawn:ped', v.coords)
 				pedspawned = true
 			end
 			if dist >= 35 then
@@ -35,8 +35,8 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('spawn:ped')
-AddEventHandler('spawn:ped',function(coords)
+RegisterNetEvent('qb-burgershot:spawn:ped')
+AddEventHandler('qb-burgershot:spawn:ped',function(coords)
 	local hash = `ig_floyd`
 
 	RequestModel(hash)
