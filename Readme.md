@@ -34,7 +34,7 @@ Nero that allowed us to use his scripts and aswell as BerkieB for his qb-target!
 
 - Lucky tickets that gives a player certain amount of money or reward. 
 
-## Insert into #qb-smallresources --> server --> consumables.lua
+## Insert into @qb-smallresources --> server --> consumables.lua
 ```
 --Burgershot
 
@@ -99,7 +99,7 @@ end)
 
 
 
-## Insert into #qb-smallresources --> config.lua
+## Insert into @qb-smallresources --> config.lua
 ```
 Consumeables = {
 
@@ -120,7 +120,7 @@ Consumeables = {
 } 
 ```
 
-## Insert into #qb-core - Shared.lua
+## Insert into @qb-core - Shared.lua
 
 ```
 QBShared.Items = {
@@ -189,7 +189,7 @@ QBShared.Jobs = {
 
 
 
-## Insert into #qb-bossmenu - config.lua
+## Insert into @qb-bossmenu - config.lua
 ```
 ['burgershot'] = vector3(-1192.04, -902.476, 13.998)),
 ```
