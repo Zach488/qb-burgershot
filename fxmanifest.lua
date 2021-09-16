@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'DrB1ackBeard'
 description 'qb-burgershot for QBCore Created By DrB1ackBeard'
-version '2.1.0'
+version '2.2.0'
 
 shared_scripts {
     'config.lua',
@@ -11,14 +11,9 @@ shared_scripts {
 }
 
 client_scripts {
-	'@PolyZone/client.lua',
-    '@PolyZone/BoxZone.lua',
-    '@PolyZone/EntityZone.lua',
-    '@PolyZone/CircleZone.lua',
-    '@PolyZone/ComboZone.lua',
 	'client/main.lua',
 	'client/garage.lua',
 	'client/menus.lua'
 }
 
-server_script 'server/main.lua'
+server_script 'server/*.lua'

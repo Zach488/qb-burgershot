@@ -1,155 +1,149 @@
 
--- bt target -
+-- target
 
 Citizen.CreateThread(function()
-    
+	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
+		name = "BurgerShotDuty",
+		heading = 32,
+		debugPoly = false,
+		minZ=14.0,
+		maxZ=18.0,
+	}, {
+		options = {
+		    {  
+			event = "qb-burgershot:DutyB",
+			icon = "far fa-clipboard",
+			label = "Clock On/Off",
+			job = "burgershot",
+		    },
+		},
+		distance = 1.5
+	})
 
-    exports['qb-target']:AddBoxZone("Duty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
-        name = "Duty",
-        heading = 32,
-        debugPoly = false,
-        minZ=14.0,
-        maxZ=18.0,
-    }, {
-        options = {
-            {  
-                event = "qb-burgershot:DutyB",
-                icon = "far fa-clipboard",
-                label = "Clock On/Off",
-                job = "burgershot",
-            },
-        },
-        distance = 1.5
-    })
+		exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
+			name = "burger_tray_1",
+			heading = 35.0,
+			debugPoly = false,
+			minZ=13.8,
+			maxZ=14.3,
+		}, {
+			options = {
+			    {
+				event = "qb-burgershot:Tray1",
+				icon = "far fa-clipboard",
+				label = "Tray 1",
+			    },
+			},
+			distance = 1.5
+		})
 
-    exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
-        name = "burger_tray_1",
-        heading = 35.0,
-        debugPoly = false,
-        minZ=13.8,
-        maxZ=14.3,
-    }, {
-        options = {
-            {
-                event = "qb-burgershot:Tray1",
-                icon = "far fa-clipboard",
-                label = "Tray 1",
-            },
-        },
-        distance = 1.5
-    })
+	exports['qb-target']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
+		name="burger_tray_2",
+		heading=318,
+		debugPoly=false,
+		minZ=14.0,
+		maxZ=14.4,
+	}, {
+		options = {
+		    {
+			event = "qb-burgershot:Tray4",
+			icon = "far fa-clipboard",
+			label = "Tray 2",
+		    },
+		},
+		distance = 1.5
+	})
 
-    exports['qb-target']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
-        name="burger_tray_2",
-        heading=318,
-        debugPoly=false,
-        minZ=14.0,
-        maxZ=14.4,
-    }, {
-        options = {
-            {
-                event = "qb-burgershot:Tray4",
-                icon = "far fa-clipboard",
-                label = "Tray 2",
-				-- job = "all",
-            },
-        },
-        distance = 1.5
-    })
-    exports['qb-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
-        name="burger_tray_3",
-        heading=350,
-        debugPoly=false,
-        minZ=13.2,
-        maxZ=14.2,
-    }, {
-        options = {
-            {
-                event = "qb-burgershot:Tray3",
-                icon = "far fa-clipboard",
-                label = "Tray 3",
-				-- job = "all",
-            },
-        },
-        distance = 3.5
-    })
+	exports['qb-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
+		name="burger_tray_3",
+		heading=350,
+		debugPoly=false,
+		minZ=13.2,
+		maxZ=14.2,
+	}, {
+		options = {
+		    {
+			event = "qb-burgershot:Tray3",
+			icon = "far fa-clipboard",
+			label = "Tray 3",
+		    },
+		},
+		distance = 3.5
+	})
 
 
- exports['qb-target']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
-    name="burgershotcooker",
-    heading=34,
-    debugPoly=false,
-    minZ=13.0,
-    maxZ=14.4,
-    }, {
-        options = {
-            {
-                event = "qb-burgershot:PattyFry",
-                icon = "fas fa-hamburger",
-                label = "Burger Cook Station",
-                job = "burgershot",
-            },
-        },
-        distance = 1.5
-    })
+	exports['qb-target']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
+		name="burgershotcooker",
+		heading=34,
+		debugPoly=false,
+		minZ=13.0,
+		maxZ=14.4,
+	}, {
+		options = {
+			{
+				event = "qb-burgershot:PattyFry",
+				icon = "fas fa-hamburger",
+				label = "Burger Cook Station",
+				job = "burgershot",
+			},
+		},
+		distance = 1.5
+	})
 
-    exports['qb-target']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
-        name="burgershotcooker2 ",
-        heading=34,
-        debugPoly=false,
-        minZ=13.0,
-        maxZ=14.3,
-        }, {
-            options = {
-                {
-                    event = "qb-burgershot:PattyFry",
-                    icon = "fas fa-hamburger",
-                    label = "Burger Cook Station 2",
-                    job = "burgershot",
-                },
-            },
-            distance = 1.5
-        })
-    
+	exports['qb-target']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
+		name="burgershotcooker2 ",
+		heading=34,
+		debugPoly=false,
+		minZ=13.0,
+		maxZ=14.3,
+	}, {
+		options = {
+			{
+				event = "qb-burgershot:PattyFry",
+				icon = "fas fa-hamburger",
+				label = "Burger Cook Station 2",
+				job = "burgershot",
+			},
+		},
+		distance = 1.5
+	})
 
-
-
-    exports['qb-target']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
-        name="burgershotfryer",
-        heading=35,
-        debugPoly=false,
-        minZ=13.0,
-        maxZ=14.4,
-        }, {
-            options = {
-                {
-                    event = "qb-burgershot:Fries",
-                    icon = "fas fa-box",
-                    label = "Make Fries",
-                    job = "burgershot",
-                },
-            },
-            distance = 1.5
-        })
+		exports['qb-target']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
+		name="burgershotfryer",
+		heading=35,
+		debugPoly=false,
+		minZ=13.0,
+		maxZ=14.4,
+		}, {
+		    options = {
+			{
+			    event = "qb-burgershot:Fries",
+			    icon = "fas fa-box",
+			    label = "Make Fries",
+			    job = "burgershot",
+			},
+		    },
+		    distance = 1.5
+		})
 
 
-        exports['qb-target']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
-            name="burgershotdrinks",
-            heading=34,
-            debugPoly=false,
-            minZ=13.8,
-            maxZ=14.8,
-            }, {
-                options = {
-                    {
-                        event = "nh-context:DrinkMenu",
-                        icon = "fas fa-filter",
-                        label = "Make Some Drinks",
-                        job = "burgershot",
-                    },
-                },
-                distance = 1.5
-            })
+	exports['qb-target']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
+	    name="burgershotdrinks",
+	    heading=34,
+	    debugPoly=false,
+	    minZ=13.8,
+	    maxZ=14.8,
+	    }, {
+		options = {
+		    {
+			event = "nh-context:DrinkMenu",
+			icon = "fas fa-filter",
+			label = "Make Some Drinks",
+			job = "burgershot",
+		    },
+		},
+		distance = 1.5
+	    })
 
         exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
             name="burgershotdrinks2",

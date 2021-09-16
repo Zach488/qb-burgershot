@@ -2,17 +2,19 @@
 -- Drawtext -
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        local sleep = 100
         if isLoggedIn then
-            if PlayerJob.name == "burgershot" then
+            if PlayerData.job.name == "burgershot" then
                 local pos = GetEntityCoords(PlayerPedId())
 
                 for k, v in pairs(Config.Locations["duty"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 5 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                             if not onDuty then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Get on duty")
                             else
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Get off duty")
                             end
                             if IsControlJustReleased(0, 38) then
@@ -20,6 +22,7 @@ Citizen.CreateThread(function()
                                 TriggerServerEvent("QBCore:ToggleDuty")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "on/off duty")
                         end
                     end
@@ -29,11 +32,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Cook Patties")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("qb-burgershot:PattyFry")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Cook Patties")
                             end  
                         end
@@ -44,11 +49,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Fry Sum Fries")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("qb-burgershot:Fries")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Fry Sum Fries")
                             end  
                         end
@@ -59,11 +66,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Make Drinks")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("nh-context:DrinkMenu")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Make Drinks")
                             end  
                         end
@@ -74,11 +83,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Open Fridge")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("nh-context:OrderMenu")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Open Fridge")
                             end  
                         end
@@ -89,11 +100,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Open Storage")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("qb-burgershot:Storage")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Open Storage")
                             end  
                         end
@@ -104,11 +117,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Make a Meal")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("nh-context:Burgers")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Make a Meal")
                             end  
                         end
@@ -119,11 +134,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Cash Register")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("qb-burgershot:bill")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Cash Register")
                             end  
                         end
@@ -134,11 +151,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Garage")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerEvent("garage:BurgerShotGarage")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                                sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "Garage")
                             end  
                         end
@@ -152,11 +171,13 @@ Citizen.CreateThread(function()
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                     if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
                             if IsControlJustReleased(0, 38) then
                                 TriggerEvent("qb-burgershot:Tray1")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
                     end
@@ -167,11 +188,13 @@ Citizen.CreateThread(function()
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                     if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
                             if IsControlJustReleased(0, 38) then
                                 TriggerEvent("qb-burgershot:Tray2")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
                     end
@@ -182,11 +205,13 @@ Citizen.CreateThread(function()
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                     if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
                             if IsControlJustReleased(0, 38) then
                                 TriggerEvent("qb-burgershot:Tray3")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
                     end
@@ -197,17 +222,20 @@ Citizen.CreateThread(function()
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                     if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
                             if IsControlJustReleased(0, 38) then
                                 TriggerEvent("qb-burgershot:Tray4")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
+                            sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
                     end
                 end
             end
         end
+        Citizen.Wait(sleep)
     end
 end)
 
