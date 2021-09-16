@@ -14,11 +14,11 @@ Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 ## Dependencies :
 
-QB Framework - https://github.com/qbcore-framework/qb-core
+QBCore Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-qb-target v2.5.2 - https://github.com/BerkieBb/qb-target
+qb-target - https://github.com/BerkieBb/qb-target
 
 nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
 
@@ -28,7 +28,7 @@ nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~
 ## Credits : 
 
 Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
-Nero that allowed us to use his scripts and aswell as berkieB for his Qb-target!
+Nero that allowed us to use his scripts and aswell as BerkieB for his qb-target!
 
 ## Soon To Come
 
@@ -195,7 +195,7 @@ QBShared.Jobs = {
 ```
 # if not making use of qb-target no need to insert this into qb-target
 
-## Insert into #qb-target - config.lua - config.targetmodels
+## Insert into @qb-target - config.lua - config.targetmodels
 ``` 
 ["burgershotgarage"] = {
 			models = {
