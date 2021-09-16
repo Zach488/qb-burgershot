@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
     while true do
         local sleep = 100
         if isLoggedIn then
-            if PlayerJob.name == "burgershot" then
+            if PlayerData.job.name == "burgershot" then
                 local pos = GetEntityCoords(PlayerPedId())
 
                 for k, v in pairs(Config.Locations["duty"]) do
