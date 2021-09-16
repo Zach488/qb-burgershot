@@ -3,12 +3,12 @@ local pedspawned = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function(Player)
-    PlayerData =  QBCore.Functions.GetPlayerData()
+    	PlayerData =  QBCore.Functions.GetPlayerData()
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(job)
-     PlayerJob = job
+     	PlayerData.job = job
 end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData')
