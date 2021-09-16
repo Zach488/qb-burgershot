@@ -4,6 +4,8 @@ Config.GaragePedLocations = {
     {coords = vector4(-1178.588, -891.9196, 13.799622, 302.58825)},
 }
 
+Config.SQL = 'oxmysql' --- oxmysql or ghmattisql
+
 --if u are not using qb-target uncomment this.
 
 -- Config.Locations = {
