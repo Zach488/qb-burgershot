@@ -5,7 +5,7 @@ Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 ## Please note
 
-- I have added an option for people not using qb-target replace the menus.lua file with the menus-notarget.lua file and uncomment lines in the config folder. I still need to add the locations of the DrawText and it still needs testing will test by the latest 11/09/2021.
+- I have added an option for people not using qb-target replace the menus.lua file with the menus-notarget.lua file and uncomment lines in the config folder.
 
 - Please make sure u use the latest dependencies aswell as core for this in order to work.
 
