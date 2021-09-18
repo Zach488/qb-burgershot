@@ -1,21 +1,36 @@
-
 -- Drawtext -
+function DrawText3D(x, y, z, text)
+    SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
+    local factor = (string.len(text)) / 370
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
+end
+
+
 Citizen.CreateThread(function()
+    local PlayerData = QBCore.Functions.GetPlayerData()
     while true do
         local sleep = 100
         if isLoggedIn then
-            if PlayerData.job.name == "burgershot" then
-                local pos = GetEntityCoords(PlayerPedId())
-
+            local pos = GetEntityCoords(PlayerPedId())
+            if PlayerData.job.name == 'burgershot' then
                 for k, v in pairs(Config.Locations["duty"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 5 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            if not onDuty then
+                            if onDuty then
                                 sleep = 5
-                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Get on duty")
+                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Get off duty")
                             else
                                 sleep = 5
-                                DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Get off duty")
+                                DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Get on duty")
                             end
                             if IsControlJustReleased(0, 38) then
                                 onDuty = not onDuty
@@ -169,7 +184,6 @@ Citizen.CreateThread(function()
             
             for k, v in pairs(Config.Locations["tray1"]) do
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
-                    if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
@@ -180,13 +194,11 @@ Citizen.CreateThread(function()
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
-                    end
                 end
             end
 
             for k, v in pairs(Config.Locations["tray2"]) do
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
-                    if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
@@ -197,13 +209,11 @@ Citizen.CreateThread(function()
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
-                    end
                 end
             end
 
             for k, v in pairs(Config.Locations["tray3"]) do
                 if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
-                    if onDuty then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
@@ -214,24 +224,6 @@ Citizen.CreateThread(function()
                             sleep = 5
                             DrawText3D(v.x, v.y, v.z, "Tray")
                         end  
-                    end
-                end
-            end
-
-            for k, v in pairs(Config.Locations["tray4"]) do
-                if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
-                    if onDuty then
-                        if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            sleep = 5
-                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Tray")
-                            if IsControlJustReleased(0, 38) then
-                                TriggerEvent("qb-burgershot:Tray4")
-                            end
-                        elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
-                            sleep = 5
-                            DrawText3D(v.x, v.y, v.z, "Tray")
-                        end  
-                    end
                 end
             end
         end
