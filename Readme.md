@@ -18,7 +18,7 @@ QBCore Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-qb-target - https://github.com/BerkieBb/qb-target
+qb-target - https://github.com/BerkieBb/qb-target (Only needed if not using draw text)
 
 nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
 
@@ -27,8 +27,8 @@ nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~
 
 ## Credits : 
 
-Decisive Burgershot Job  - https://github.com/decisiveE/BurgerShotJob-for-qb/tree/main/decisive-job
-Nero that allowed us to use his scripts and aswell as BerkieB for his qb-target!
+- Nero that allowed us to use his scripts.
+- BerkieB for his qb-target.
 
 ## Soon To Come
 
