@@ -9,7 +9,7 @@ Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 - Please make sure u use the latest dependencies aswell as core for this in order to work.
 
-- This Job has been tested on the latest build as of 19/08/2021.
+- This Job has been tested on the latest build as of 14/01/2022.
 
 
 ## Dependencies :
@@ -29,9 +29,9 @@ qb-menu - https://github.com/qbcore-framework/qb-menu
 
 - BerkieB for his qb-target.
 
-## Soon To Come
+## Newly Added
 
-- Lucky tickets that gives a player certain amount of money or reward. 
+- Different types of coupons 
 
 ## Insert into @qb-smallresources --> server --> consumables.lua
 ```
@@ -145,9 +145,13 @@ QBShared.Items = {
 	["burger-potato"] 				 = {["name"] = "burger-potato", 			 	["label"] = "Bag of Potatoes", 		["weight"] = 1500, 		["type"] = "item", 			["image"] = "bs_potato.png", 	    		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 	["burger-mshakeformula"] 		 = {["name"] = "burger-mshakeformula", 			["label"] = "Milkshake Formula", 		["weight"] = 125, 		["type"] = "item", 		["image"] = "bs_ingredients_icecream.png", ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 	["burger-sodasyrup"] 		 	 = {["name"] = "burger-sodasyrup", 				["label"] = "Soda Syrup", 		["weight"] = 125, 		["type"] = "item", 				["image"] = "bs_ingredients_hfcs.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
-	["burger-toy1"] 		 		 = {["name"] = "burger-toy1", 					["label"] = "Action Figure", 			["weight"] = 50, 		["type"] = "item", 		["image"] = "action-figure.png", 		["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "An Action Figure From the late 90's"},
-	["burger-toy2"] 		 		 = {["name"] = "burger-toy2", 					["label"] = "Pink Teddy", 				["weight"] = 50, 		["type"] = "item", 		["image"] = "beaniebaby.png", 			["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "A Fluffy Pink Teddy from the Atic"},
+	["burger-toy1"] 		 		 = {["name"] = "burger-toy1", 					["label"] = "Action Figure", 			["weight"] = 50, 		["type"] = "item", 		["image"] = "burger-toy1.png", 		["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "An Action Figure From the late 90's"},
+	["burger-toy2"] 		 		 = {["name"] = "burger-toy2", 					["label"] = "Pink Teddy", 				["weight"] = 50, 		["type"] = "item", 		["image"] = "burger-toy2.png", 			["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "A Fluffy Pink Teddy from the Atic"},
 	["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 			["label"] = "Murder Meal", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-box.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
+
+	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon25", 			["label"] = "Burgershot Coupon 25% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-25.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "25% Off Coupon "},
+	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon15", 			["label"] = "Burgershot Coupon 15% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-fifteen.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "15% Off Coupon "},
+	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon10", 			["label"] = "Burgershot Coupon 10% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-ten.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "10% Off Coupon "},
 
 }
 
