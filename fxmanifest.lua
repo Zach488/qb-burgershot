@@ -3,11 +3,10 @@ game 'gta5'
 
 author 'DrB1ackBeard'
 description 'qb-burgershot for QBCore Created By DrB1ackBeard'
-version '2.2.0'
+version '3.0.0'
 
 shared_scripts {
-    'config.lua',
-    '@qb-core/import.lua'
+    'config.lua'
 }
 
 client_scripts {

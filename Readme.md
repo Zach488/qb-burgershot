@@ -20,14 +20,13 @@ PolyZone - https://github.com/mkafrin/PolyZone
 
 qb-target - https://github.com/BerkieBb/qb-target (Only needed if not using draw text)
 
-nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
+qb-input - https://github.com/qbcore-framework/qb-input
 
-nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~ See folder [NH] for scripts
+qb-menu - https://github.com/qbcore-framework/qb-menu
 
 
 ## Credits : 
 
-- Nero that allowed us to use his scripts.
 - BerkieB for his qb-target.
 
 ## Soon To Come
@@ -120,7 +119,7 @@ Consumeables = {
 } 
 ```
 
-## Insert into @qb-core - Shared.lua
+## Insert into @qb-core/shared/items.lua 
 
 ```
 QBShared.Items = {
@@ -153,7 +152,7 @@ QBShared.Items = {
 }
 
 ```
-
+## Insert into @qb-core/shared/jobs.lua 
 ```
 QBShared.Jobs = {
     ["burgershot"] = {

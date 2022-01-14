@@ -1,3 +1,9 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
+isLoggedIn = true
+PlayerJob = {}
+
+local onDuty = false
 
 -- target
 
@@ -303,17 +309,17 @@ Citizen.CreateThread(function()
 end)
 
 
--- NH - Context --
+-- QB-MENU --
 
 RegisterNetEvent('nh-context:Burgers', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+    exports['qb-menu']:openMenu({
         {
-            id = 0,
+            
             header = "| Available Burgers |",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            id = 1,
+            
             header = "• Moneyshot Burger",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
@@ -321,7 +327,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             }
         },
         {
-            id = 2,
+            
             header = "• Meat Free Burger",
             txt = "Bun , Tomato , Lettuce",
             params = {
@@ -329,7 +335,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             }
         },
         {
-            id = 3,
+            
             header = "• Bleeder Burger",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
@@ -337,7 +343,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             }
         },
         {
-            id = 4,
+            
             header = "• The Heart Stopper",
             txt = "Bun , Cooked Patty , Tomato , Lettuce",
             params = {
@@ -345,7 +351,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             }
         },
         {
-            id = 5,
+            
             header = "• Torpedo Roll",
             txt = "Bun , Cooked Meat",
             params = {
@@ -353,7 +359,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
             }
         },
         {
-            id = 6,
+            
             header = "• Murder Meal",
             txt = "The Heart Stopper, Fries and SoftDrink",
             params = {
@@ -363,21 +369,21 @@ RegisterNetEvent('nh-context:Burgers', function(data)
         {
             id = 7,
             header = "Close (ESC)",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
     })
 end)
 
 
 RegisterNetEvent('nh-context:OrderMenu', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+    exports['qb-menu']:openMenu({
         {
-            id = 0,
+            
             header = "| Fridge |",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            id = 1,
+            
             header = "• Order Items",
             txt = "Order New Ingredients!",
             params = {
@@ -385,7 +391,7 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
             }
         },
         {
-            id = 2,
+           
             header = "• Open Fridge",
             txt = "See what you have in storage",
             params = {
@@ -393,22 +399,22 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
             }
         },
         {
-            id = 3,
+            
             header = "Close (ESC)",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
     })
 end)
 
 RegisterNetEvent('nh-context:DrinkMenu', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+    exports['qb-menu']:openMenu({
         {
             id = 0,
             header = "| Drink Menu |",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            id = 1,
+            
             header = "• Soft Drink",
             txt = "Soda Syrup",
             params = {
@@ -416,7 +422,7 @@ RegisterNetEvent('nh-context:DrinkMenu', function(data)
             }
         },
         {
-            id = 2,
+            
             header = "• Milkshake",
             txt = "Milkshake Formula",
             params = {
@@ -424,9 +430,9 @@ RegisterNetEvent('nh-context:DrinkMenu', function(data)
             }
         },
         {
-            id = 3,
+           
             header = "Close (ESC)",
-            txt = "",
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
     })
 end)
@@ -435,24 +441,30 @@ end)
 -- Till Stuff --
 RegisterNetEvent("qb-burgershot:bill")
 AddEventHandler("qb-burgershot:bill", function()
-    local bill = exports["nh-keyboard"]:KeyboardInput({
+    local bill = exports['qb-input']:ShowInput({
         header = "Create Receipt",
-        rows = {
+		submitText = "Bill",
+        inputs = {
             {
-                id = 0,
-                txt = "Server ID"
+                text = "Server ID(#)",
+				name = "citizenid", -- name of the input should be unique otherwise it might override
+                type = "text", -- type of the input
+                isRequired = true -- Optional [accepted values: true | false] but will submit the form if no value is inputted
             },
             {
-                id = 1,
-                txt = "Amount"
+                text = "Bill Price ($)", -- text you want to be displayed as a place holder
+                name = "billprice", -- name of the input should be unique otherwise it might override
+                type = "number", -- type of the input - number will not allow non-number characters in the field so only accepts 0-9
+                isRequired = false -- Optional [accepted values: true | false] but will submit the form if no value is inputted
             }
+			
         }
     })
     if bill ~= nil then
-        if bill[1].input == nil or bill[2].input == nil then 
+        if bill.citizenid == nil or bill.billprice == nil then 
             return 
         end
-        TriggerServerEvent("qb-burgershot:bill:player", bill[1].input, bill[2].input)
+        TriggerServerEvent("qb-burgershot:bill:player", bill.citizenid, bill.billprice)
     end
 end)
 

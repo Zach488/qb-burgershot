@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 -- Drawtext -
 function DrawText3D(x, y, z, text)
     SetTextScale(0.35, 0.35)

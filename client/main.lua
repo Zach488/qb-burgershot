@@ -1,6 +1,7 @@
-isLoggedIn = true
-
+local QBCore = exports['qb-core']:GetCoreObject()
+isLoggedIn = false
 local onDuty = false
+PlayerJob = {}
 
 function DrawText3Ds(x, y, z, text)
 	SetTextScale(0.35, 0.35)
@@ -20,18 +21,25 @@ end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-	if PlayerData.job.onduty then
-	    if PlayerData.job.name == "burgershot" then
-		TriggerServerEvent("QBCore:ToggleDuty")
-	    end
-	end
+    QBCore.Functions.GetPlayerData(function(PlayerData)
+        PlayerJob = PlayerData.job
+        if PlayerData.job.onduty then
+            if PlayerData.job.name == "burgershot" then
+                TriggerServerEvent("QBCore:ToggleDuty")
+            end
+        end
+    end)
+end)
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+    onDuty = PlayerJob.onduty
 end)
 
 RegisterNetEvent('QBCore:Client:SetDuty')
 AddEventHandler('QBCore:Client:SetDuty', function(duty)
-    if PlayerData.job.name == 'burgershot' then
-    	onDuty = duty
-    end
+	onDuty = duty
 end)
 
 Citizen.CreateThread(function()

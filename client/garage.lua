@@ -1,10 +1,15 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 PlayerData = {}
 local pedspawned = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function(Player)
-    	PlayerData =  QBCore.Functions.GetPlayerData()
-end)
+function QBCore.Functions.GetPlayerData(cb)
+    if cb then
+        cb(QBCore.PlayerData)
+    else
+        return QBCore.PlayerData
+    end
+end
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(job)
@@ -45,11 +50,11 @@ AddEventHandler('qb-burgershot:spawn:ped',function(coords)
 	end
 
     	pedspawned = true
-	npc = CreatePed(5, hash, coords.x, coords.y, coords.z - 1.0, coords.w, false, false)
-	FreezeEntityPosition(npc, true)
-    	SetBlockingOfNonTemporaryEvents(npc, true)
-	loadAnimDict("amb@world_human_cop_idles@male@idle_b") 
-	TaskPlayAnim(npc, "amb@world_human_cop_idles@male@idle_b", "idle_e", 8.0, 1.0, -1, 17, 0, 0, 0, 0)
+        npc = CreatePed(5, hash, coords.x, coords.y, coords.z - 1.0, coords.w, false, false)
+        FreezeEntityPosition(npc, true)
+        SetBlockingOfNonTemporaryEvents(npc, true)
+        loadAnimDict("amb@world_human_cop_idles@male@idle_b") 
+        TaskPlayAnim(npc, "amb@world_human_cop_idles@male@idle_b", "idle_e", 8.0, 1.0, -1, 17, 0, 0, 0, 0)
 end)
 
 function loadAnimDict(dict)
@@ -89,14 +94,12 @@ AddEventHandler('qb-burgershot:storecar', function()
 end)
 
 RegisterNetEvent('garage:BurgerShotGarage', function()
-    TriggerEvent('nh-context:sendMenu', {
+    exports['qb-menu']:openMenu({
         {
-            id = 1,
             header = "| BurgerShot Garage |",
-            txt = ""
+            isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            id = 2,
             header = "• Stallion",
             txt = "Declasse Burger Shot Stallion",
             params = {
@@ -107,7 +110,6 @@ RegisterNetEvent('garage:BurgerShotGarage', function()
             }
         },
         {
-            id = 3,
             header = "• Store Vehicle",
             txt = "Store Vehicle Inside Garage",
             params = {
@@ -118,9 +120,8 @@ RegisterNetEvent('garage:BurgerShotGarage', function()
             }
         },	
         {
-            id = 4,
             header = "Close (ESC)",
-            txt = "",
+            isMenuHeader = true,
         },	
     })
 end)
