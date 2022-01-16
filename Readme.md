@@ -150,8 +150,8 @@ QBShared.Items = {
 	["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 			["label"] = "Murder Meal", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-box.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
 
 	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon25", 			["label"] = "Burgershot Coupon 25% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-25.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "25% Off Coupon "},
-	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon15", 			["label"] = "Burgershot Coupon 15% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-fifteen.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "15% Off Coupon "},
-	["burger-coupon25"] 		 	 = {["name"] = "burger-coupon10", 			["label"] = "Burgershot Coupon 10% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-ten.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "10% Off Coupon "},
+	["burger-coupon15"] 		 	 = {["name"] = "burger-coupon15", 			["label"] = "Burgershot Coupon 15% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-fifteen.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "15% Off Coupon "},
+	["burger-coupon10"] 		 	 = {["name"] = "burger-coupon10", 			["label"] = "Burgershot Coupon 10% Off", 				["weight"] = 15, 		["type"] = "item", 		["image"] = "bs_coupon-ten.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "10% Off Coupon "},
 
 }
 
