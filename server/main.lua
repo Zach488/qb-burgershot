@@ -10,7 +10,7 @@ AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
             if billed ~= nil then
                 if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                     if amount and amount > 0 then
-                        exports.oxmysql:insert('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (:citizenid, :amount, :society, :sender)', {
+                        MySQL.Async.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (:citizenid, :amount, :society, :sender)', {
                             ['citizenid'] = billed.PlayerData.citizenid,
                             ['amount'] = amount,
                             ['society'] = biller.PlayerData.job.name,
