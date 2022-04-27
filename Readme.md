@@ -1,4 +1,4 @@
-# A Burgershot for QBCore Framework
+# A Burgershot for QBCore Framework - No Longer Maintained. 
 
 Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
