@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
 	}, {
 		options = {
 		    {
-			event = "qb-burgershot:Tray4",
+			event = "qb-burgershot:Tray2",
 			icon = "far fa-clipboard",
 			label = "Tray 2",
 		    },
