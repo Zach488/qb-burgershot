@@ -25,10 +25,6 @@ qb-input - https://github.com/qbcore-framework/qb-input
 qb-menu - https://github.com/qbcore-framework/qb-menu
 
 
-## Credits : 
-
-- BerkieB for his qb-target.
-
 ## Newly Added
 
 - Different types of coupons 
@@ -100,22 +96,24 @@ end)
 
 ## Insert into @qb-smallresources --> config.lua
 ```
-Consumeables = {
+Config.ConsumablesEat = {
 
---Food 
+-- Burgershot 
 
-["burger-bleeder"] = math.random(35, 54),
-["burger-moneyshot"] = math.random(35, 54),
-["burger-torpedo"] = math.random(35, 54),
-["burger-heartstopper"] = math.random(35, 54),
-["burger-meatfree"] = math.random(35, 54),
-["burger-fries"] = math.random(35, 54),
+	["burger-bleeder"] = math.random(35, 54),
+	["burger-moneyshot"] = math.random(35, 54),
+	["burger-torpedo"] = math.random(35, 54),
+	["burger-heartstopper"] = math.random(35, 54),
+	["burger-meatfree"] = math.random(35, 54),
+	["burger-fries"] = math.random(35, 54),
+}
 
+Config.ConsumablesDrink = {
 
---Drinks
-["burger-softdrink"] = math.random(40, 50),
-["burger-mshake"] = math.random(40, 50),
+	-- Burgershot 
 
+	["burger-softdrink"] = math.random(40, 50),
+	["burger-mshake"] = math.random(40, 50),
 } 
 ```
 
@@ -123,8 +121,8 @@ Consumeables = {
 
 ```
 QBShared.Items = {
--- Burger Shot
--- Food
+	-- Burger Shot
+	-- Food
 	["burger-bleeder"] 				 = {["name"] = "burger-bleeder", 			 	["label"] = "Bleeder", 					["weight"] = 250, 		["type"] = "item", 		["image"] = "bs_the-bleeder.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
 	["burger-moneyshot"] 			 = {["name"] = "burger-moneyshot", 			 	["label"] = "Moneyshot", 				["weight"] = 300, 		["type"] = "item", 		["image"] = "bs_money-shot.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
 	["burger-torpedo"] 				 = {["name"] = "burger-torpedo", 			 	["label"] = "Torpedo", 					["weight"] = 310, 		["type"] = "item", 		["image"] = "bs_torpedo.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sates Hunger."},
@@ -136,7 +134,7 @@ QBShared.Items = {
 	["burger-softdrink"] 			 = {["name"] = "burger-softdrink", 				["label"] = "Soft Drink", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "bs_softdrink.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ice Cold Drink."},
 	["burger-mshake"] 			     = {["name"] = "burger-mshake", 				["label"] = "Milkshake", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "bs_milkshake.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Hand-scooped for you!"},
 	
---Ingredients
+	--Ingredients
 	["burger-bun"] 				 	 = {["name"] = "burger-bun", 			 	  	["label"] = "Bun", 			["weight"] = 125, 		["type"] = "item", 					["image"] = "bs_bun.png", 		    		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 	["burger-meat"] 				 = {["name"] = "burger-meat", 			 	  	["label"] = "Cooked Patty", 			["weight"] = 125, 		["type"] = "item", 		["image"] = "bs_patty.png", 		    	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
 	["burger-lettuce"] 				 = {["name"] = "burger-lettuce", 			 	["label"] = "Lettuce", 				["weight"] = 125, 		["type"] = "item", 			["image"] = "bs_lettuce.png", 	    		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Ingredient"},
@@ -162,6 +160,7 @@ QBShared.Jobs = {
     ["burgershot"] = {
 		label = "Burgershot Employee",
 		defaultDuty = true,
+		offDutyPay = false,
 		grades = {
             ['0'] = {
                 name = "Trainee",
@@ -191,28 +190,20 @@ QBShared.Jobs = {
 
 
 
-## Insert into @qb-bossmenu - config.lua
+## Insert into @qb-management/client - cl_config.lua
 ```
-['burgershot'] = vector3(-1192.04, -902.476, 13.998),
-```
-# if not making use of qb-target no need to insert this into qb-target
+Config.BossMenus = {
 
-## Insert into @qb-target - config.lua - config.targetmodels
-``` 
-["burgershotgarage"] = {
-			models = {
-				"ig_floyd"
-			},
-			options = {
-				{
-					type = "client",
-					event = "garage:BurgerShotGarage",
-					icon = "fas fa-car",
-					label = "BurgerShot Garage",
-					job = "burgershot",
-				}
-			},
-			distance = 2.5,
-		},
+	['burgershot'] = {
+		vector3(-1192.04, -902.476, 13.998),
+	},
+}
 
+Config.BossMenuZones = {
+
+	['burgershot'] = {
+        { coords = vector3(-1192.04, -902.476, 13.998), length = 1.15, width = 2.6, heading = 353.0, minZ = 43.59, maxZ = 44.99 },
+    },
+}
 ```
+

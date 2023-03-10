@@ -85,7 +85,7 @@ Citizen.CreateThread(function()
                                 sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Make Drinks")
                                 if IsControlJustReleased(0, 38) then
-                                    TriggerEvent("nh-context:DrinkMenu")
+                                    TriggerEvent("qb-burgershot-menu:DrinkMenu")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
                                 sleep = 5
@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
                                 sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Open Fridge")
                                 if IsControlJustReleased(0, 38) then
-                                    TriggerEvent("nh-context:OrderMenu")
+                                    TriggerEvent("qb-burgershot-menu:OrderMenu")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
                                 sleep = 5
@@ -136,7 +136,7 @@ Citizen.CreateThread(function()
                                 sleep = 5
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Make a Meal")
                                 if IsControlJustReleased(0, 38) then
-                                    TriggerEvent("nh-context:Burgers")
+                                    TriggerEvent("qb-burgershot-menu:Burgers")
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
                                 sleep = 5
@@ -234,8 +234,8 @@ end)
 
 -- NH - Context --
 
-RegisterNetEvent('nh-context:Burgers', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+RegisterNetEvent('qb-burgershot-menu:Burgers', function(data)
+    TriggerEvent('qb-burgershot-menu:sendMenu', {
         {
             id = 0,
             header = "| Available Burgers |",
@@ -298,8 +298,8 @@ RegisterNetEvent('nh-context:Burgers', function(data)
 end)
 
 
-RegisterNetEvent('nh-context:OrderMenu', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+RegisterNetEvent('qb-burgershot-menu:OrderMenu', function(data)
+    TriggerEvent('qb-burgershot-menu:sendMenu', {
         {
             id = 0,
             header = "| Fridge |",
@@ -329,8 +329,8 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
     })
 end)
 
-RegisterNetEvent('nh-context:DrinkMenu', function(data)
-    TriggerEvent('nh-context:sendMenu', {
+RegisterNetEvent('qb-burgershot-menu:DrinkMenu', function(data)
+    TriggerEvent('qb-burgershot-menu:sendMenu', {
         {
             id = 0,
             header = "| Drink Menu |",

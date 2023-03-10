@@ -8,6 +8,20 @@ local onDuty = false
 -- target
 
 Citizen.CreateThread(function()
+
+    exports['qb-target']:AddTargetModel(`ig_floyd`, {
+        options = {
+            {
+                type = "client",
+                event = "garage:BurgerShotGarage",
+                icon = "fas fa-car",
+                label = "BurgerShot Garage",
+                job = "burgershot",
+            },
+        },
+        distance = 2.5
+    })
+
 	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
 		name = "BurgerShotDuty",
 		heading = 32,
@@ -142,7 +156,7 @@ Citizen.CreateThread(function()
 	    }, {
 		options = {
 		    {
-			event = "nh-context:DrinkMenu",
+			event = "qb-burgershot-menu:DrinkMenu",
 			icon = "fas fa-filter",
 			label = "Make Some Drinks",
 			job = "burgershot",
@@ -160,7 +174,7 @@ Citizen.CreateThread(function()
             }, {
                 options = {
                     {
-                        event = "nh-context:DrinkMenu",
+                        event = "qb-burgershot-menu:DrinkMenu",
                         icon = "fas fa-filter",
                         label = "Make Some Drinks",
                         job = "burgershot",
@@ -179,7 +193,7 @@ Citizen.CreateThread(function()
         }, {
                 options = {
                     {
-                        event = "nh-context:OrderMenu",
+                        event = "qb-burgershot-menu:OrderMenu",
                         icon = "fas fa-laptop",
                         label = "Order Ingredients!",
                         job = "burgershot",
@@ -216,7 +230,7 @@ Citizen.CreateThread(function()
         }, {
                 options = {
                     {
-                        event = "nh-context:Burgers",
+                        event = "qb-burgershot-menu:Burgers",
                         icon = "fas fa-cheeseburger",
                         label = "Burger Work Station",
                         job = "burgershot",
@@ -311,7 +325,7 @@ end)
 
 -- QB-MENU --
 
-RegisterNetEvent('nh-context:Burgers', function(data)
+RegisterNetEvent('qb-burgershot-menu:Burgers', function(data)
     exports['qb-menu']:openMenu({
         {
             
@@ -375,7 +389,7 @@ RegisterNetEvent('nh-context:Burgers', function(data)
 end)
 
 
-RegisterNetEvent('nh-context:OrderMenu', function(data)
+RegisterNetEvent('qb-burgershot-menu:OrderMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             
@@ -399,14 +413,13 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
             }
         },
         {
-            
             header = "Close (ESC)",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
     })
 end)
 
-RegisterNetEvent('nh-context:DrinkMenu', function(data)
+RegisterNetEvent('qb-burgershot-menu:DrinkMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             id = 0,
