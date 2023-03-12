@@ -1,4 +1,4 @@
-# A Burgershot for QBCore Framework - Not working at the moment just updating to the latest. 
+# A Burgershot for QBCore Framework
 
 Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
@@ -9,7 +9,7 @@ Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
 - Please make sure u use the latest dependencies aswell as core for this in order to work.
 
-- This Job has been tested on the latest build as of 14/01/2022.
+- This Job has been tested on the latest build as of 12/03/2023.
 
 
 ## Dependencies :
