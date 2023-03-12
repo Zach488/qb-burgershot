@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
         local sleep = 100
         if isLoggedIn then
             local pos = GetEntityCoords(PlayerPedId())
-            if PlayerData.job.name == 'burgershot' then
+            if PlayerData.job.name == Config.Job then
                 for k, v in pairs(Config.Locations["duty"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 5 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then

@@ -201,6 +201,72 @@ QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
 end)
 
 
+
+
+RegisterNetEvent('qb-burgershot:remove:potato', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.RemoveItem("burger-potato", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-potato"], "remove")
+end)
+
+RegisterNetEvent('qb-burgershot:add:fries', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.AddItem("burger-fries", 4)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-potato"], "add", 4) -- Test
+end)
+
+RegisterNetEvent('qb-burgershot:remove:rawpatty', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.RemoveItem("burger-raw", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-raw"], "remove")
+end)
+
+RegisterNetEvent('qb-burgershot:add:burgermeat', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.AddItem("burger-meat", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-meat"], "add")
+end)
+
+RegisterNetEvent('qb-burgershot:remove:sodasyrup', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.RemoveItem("burger-sodasyrup", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-sodasyrup"], "remove")
+end)
+
+RegisterNetEvent('qb-burgershot:add:softdrink', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.AddItem("burger-softdrink", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-softdrink"], "add")
+end)
+
+RegisterNetEvent('qb-burgershot:remove:mshakeformula', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.RemoveItem("burger-mshakeformula", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-mshakeformula"], "remove")
+end)
+
+RegisterNetEvent('qb-burgershot:add:mshake', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.AddItem("burger-mshake", 1)
+    TriggerClientEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-mshake"], "add")
+end)
+
 RegisterServerEvent("qb-burgershot:bill:player")
 AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)

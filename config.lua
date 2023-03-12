@@ -1,5 +1,7 @@
 Config = {}
 
+Config.Job = 'burgershot'
+
 Config.GaragePedLocations = {
     {coords = vector4(-1178.588, -891.9196, 13.799622, 302.58825)},
 }

@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
                 event = "garage:BurgerShotGarage",
                 icon = "fas fa-car",
                 label = "BurgerShot Garage",
-                job = "burgershot",
+                job = Config.Job,
             },
         },
         distance = 2.5
@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
 			event = "qb-burgershot:DutyB",
 			icon = "far fa-clipboard",
 			label = "Clock On/Off",
-			job = "burgershot",
+			job = Config.Job,
 		    },
 		},
 		distance = 1.5
@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
 				event = "qb-burgershot:PattyFry",
 				icon = "fas fa-hamburger",
 				label = "Burger Cook Station",
-				job = "burgershot",
+				job = Config.Job,
 			},
 		},
 		distance = 1.5
@@ -122,7 +122,7 @@ Citizen.CreateThread(function()
 				event = "qb-burgershot:PattyFry",
 				icon = "fas fa-hamburger",
 				label = "Burger Cook Station 2",
-				job = "burgershot",
+				job = Config.Job,
 			},
 		},
 		distance = 1.5
@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
 			    event = "qb-burgershot:Fries",
 			    icon = "fas fa-box",
 			    label = "Make Fries",
-			    job = "burgershot",
+			    job = Config.Job,
 			},
 		    },
 		    distance = 1.5
@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
 			event = "qb-burgershot-menu:DrinkMenu",
 			icon = "fas fa-filter",
 			label = "Make Some Drinks",
-			job = "burgershot",
+			job = Config.Job,
 		    },
 		},
 		distance = 1.5
@@ -177,7 +177,7 @@ Citizen.CreateThread(function()
                         event = "qb-burgershot-menu:DrinkMenu",
                         icon = "fas fa-filter",
                         label = "Make Some Drinks",
-                        job = "burgershot",
+                        job = Config.Job,
                     },
                 },
                 distance = 1.5
@@ -196,7 +196,7 @@ Citizen.CreateThread(function()
                         event = "qb-burgershot-menu:OrderMenu",
                         icon = "fas fa-laptop",
                         label = "Order Ingredients!",
-                        job = "burgershot",
+                        job = Config.Job,
                     },
                 },
                 distance = 1.5
@@ -214,7 +214,7 @@ Citizen.CreateThread(function()
                         event = "qb-burgershot:Storage",
                         icon = "fas fa-box",
                         label = "Storage",
-                        job = "burgershot",
+                        job = Config.Job,
                     },
                 },
                 distance = 1.5
@@ -233,7 +233,7 @@ Citizen.CreateThread(function()
                         event = "qb-burgershot-menu:Burgers",
                         icon = "fas fa-cheeseburger",
                         label = "Burger Work Station",
-                        job = "burgershot",
+                        job = Config.Job,
                     },
                 },
                 distance = 1.5
@@ -253,7 +253,7 @@ Citizen.CreateThread(function()
                         parms = "1",
                         icon = "fas fa-credit-card",
                         label = "Charge Customer",
-                        job = "burgershot",
+                        job = Config.Job,
                     },
                 },
                 distance = 1.5
@@ -272,7 +272,7 @@ Citizen.CreateThread(function()
                             parms = "2",
                             icon = "fas fa-credit-card",
                             label = "Charge Customer",
-                            job = "burgershot",
+                            job = Config.Job,
                         },
                     },
                     distance = 1.5
@@ -292,7 +292,7 @@ Citizen.CreateThread(function()
                                     parms = "3",
                                     icon = "fas fa-credit-card",
                                     label = "Charge Customer",
-                                    job = "burgershot",
+                                    job = Config.Job,
                                 },
                             },
                             distance = 1.5
@@ -314,7 +314,7 @@ Citizen.CreateThread(function()
                                 parms = "4",
                                 icon = "fas fa-credit-card",
                                 label = "Charge Customer",
-                                job = "burgershot",
+                                job = Config.Job,
                             },
                         },
                         distance = 1.5
