@@ -24,10 +24,13 @@ qb-input - https://github.com/qbcore-framework/qb-input
 
 qb-menu - https://github.com/qbcore-framework/qb-menu
 
+Map - https://www.gta5-mods.com/maps/burgershot-remastered-gta-v-interior-mod-gtadps
 
-## Newly Added
+Car - https://www.gta5-mods.com/paintjobs/vapid-speedo-express-burgershot-livery
 
-- Different types of coupons 
+
+## Copy file into @qb-doorlock --> configs
+Copy the burgershot.lua file inside the assets folder into the doorlock configs folder
 
 ## Insert into @qb-smallresources --> server --> consumables.lua
 ```

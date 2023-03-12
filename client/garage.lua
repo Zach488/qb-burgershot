@@ -64,23 +64,49 @@ function loadAnimDict(dict)
     end
 end
 
+RegisterCommand('livery', function(source, args, rawCommand)
+	local Veh = GetVehiclePedIsIn(GetPlayerPed(-1))
+  local livery = tonumber(args[1])
+
+  SetVehicleLivery(Veh, livery) --CHANGE livery(id)
+  drawNotification("Vehicle Livery ~r~"..livery.."~s~ loaded!")
+end)
+
+function drawNotification(Notification)
+	SetNotificationTextEntry('STRING')
+	AddTextComponentString(Notification)
+	DrawNotification(false, false)
+end
+
 RegisterNetEvent('qb-burgershot:garage')
 AddEventHandler('qb-burgershot:garage', function(bs)
-    local vehicle = bs.vehicle
-    local coords = vector4(-1172.861, -888.4072, 13.940833, 40.516719)
-        if PlayerData.job.name == "burgershot" then
-            if vehicle == 'stalion2' then		
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    SetVehicleNumberPlateText(veh, "BURGER"..tostring(math.random(1000, 9999)))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                    SetEntityHeading(veh, coords.w)
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    SetVehicleEngineOn(veh, true, true)
-                end, coords, true)
+    local vehicle = bs.vehicle  
+    local coords = Config.CarSpawnLocation
+        if PlayerData.job.onduty then
+            if PlayerData.job.name == Config.Job then
+                if vehicle == 'stalion2' then		
+                    QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                        SetVehicleNumberPlateText(veh, "BURGER"..tostring(math.random(1000, 9999)))
+                        exports['LegacyFuel']:SetFuel(veh, 100.0)
+                        SetEntityHeading(veh, coords.w)
+                        TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                        TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                        SetVehicleEngineOn(veh, true, true)
+                    end, coords, true)
+                elseif vehicle == 'nspeedo' then		
+                    QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                        SetVehicleNumberPlateText(veh, "BURGER"..tostring(math.random(1000, 9999)))
+                        SetVehicleLivery(veh, 14)
+                        exports['LegacyFuel']:SetFuel(veh, 100.0)
+                        SetEntityHeading(veh, coords.w)
+                        TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                        TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                        SetVehicleEngineOn(veh, true, true)
+                    end, coords, true)
+                end
+            else 
+                QBCore.Functions.Notify('You are not an employee of Burgershot.', 'error')
             end
-        else
-            QBCore.Functions.Notify('You are not an employee of BurgerShot.', 'error')
         end
 end)
 
@@ -106,6 +132,16 @@ RegisterNetEvent('garage:BurgerShotGarage', function()
                 event = "qb-burgershot:garage",
                 args = {
                     vehicle = 'stalion2',
+                }
+            }
+        },
+        {
+            header = "• Speedo",
+            txt = "Burger Shot Van",
+            params = {
+                event = "qb-burgershot:garage",
+                args = {
+                    vehicle = 'nspeedo',
                 }
             }
         },

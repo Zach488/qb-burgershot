@@ -21,7 +21,6 @@ end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
-        PlayerJob = PlayerData.job
         if PlayerData.job.onduty then
             if PlayerData.job.name == Config.Job then
                 TriggerServerEvent("QBCore:ToggleDuty")
@@ -104,7 +103,7 @@ RegisterNetEvent("qb-burgershot:CreateMurderMeal", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientMurderMeal', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Murder Meal..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Murder Meal..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -132,7 +131,7 @@ RegisterNetEvent("qb-burgershot:BleederBurger", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -160,7 +159,7 @@ RegisterNetEvent("qb-burgershot:MoneyShot", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -188,7 +187,7 @@ RegisterNetEvent("qb-burgershot:HeartStopper", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientBurger', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Burgers..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -216,7 +215,7 @@ RegisterNetEvent("qb-burgershot:Torpedo", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientTorpedo', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Torpedo..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Torpedo..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -244,7 +243,7 @@ RegisterNetEvent("qb-burgershot:MeatFree", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:ingredientMeatfree', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Meat Free Burger..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Meat Free Burger..", 4000, false, false, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -324,7 +323,7 @@ end)
 -- Functions --
 function MakeFries()
 	TriggerServerEvent('qb-burgershot:remove:potato')
-	QBCore.Functions.Progressbar("pickup", "Frying the fries..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", "Frying the fries..", 4000, false, false, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -349,7 +348,7 @@ end
 
 function MakePatty()
 	TriggerServerEvent('qb-burgershot:remove:rawpatty')
-    QBCore.Functions.Progressbar("pickup", "Cooking the Patty..", 4000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Cooking the Patty..", 4000, false, false, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -373,7 +372,7 @@ end
 
 function MakeSoftDrink()
 	TriggerServerEvent('qb-burgershot:remove:sodasyrup')
-    QBCore.Functions.Progressbar("pickup", "Filling a cup..", 4000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Filling a cup..", 4000, false, false, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -388,7 +387,7 @@ end
 function MakeMShake()
 	TriggerServerEvent('qb-burgershot:remove:mshakeformula')
     Player.Functions.RemoveItem("burger-mshakeformula", 1)
-    QBCore.Functions.Progressbar("pickup", "Filling up a cup..", 4000, false, true, {
+    QBCore.Functions.Progressbar("pickup", "Filling up a cup..", 4000, false, false, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
